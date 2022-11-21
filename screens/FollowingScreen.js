@@ -1,5 +1,7 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
+import HeaderUI from "../navigation/HeaderUI";
 
 export default function FollowingScreen(props) {
     //navigation
@@ -7,8 +9,14 @@ export default function FollowingScreen(props) {
     //function of navigate 
     const {navigate, goback} = navigation;
     return (
-        <Text onPress={() => {
-            navigate('PostScreen')
-        }}>This is FollowingScreen</Text>
+        <SafeAreaView style = {styles.wrapper}>
+            <HeaderUI/>
+        </SafeAreaView>
     )
 }
+
+const styles =  StyleSheet.create({
+    wrapper: {
+        backgroundColor:"#fff"
+    }
+})

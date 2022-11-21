@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet, SafeAreaView } from "react-native";
+import HeaderUI from "../navigation/HeaderUI";
 
 export default function LibraryScreen(props) {
     //navigation
@@ -7,6 +8,14 @@ export default function LibraryScreen(props) {
     //function of navigate 
     const {navigate, goback} = navigation;
     return (
-        <Text>This is LibraryScreen</Text>
+        <SafeAreaView style = {styles.wrapper}>
+            <HeaderUI/>
+        </SafeAreaView>
     )
 }
+
+const styles =  StyleSheet.create({
+    wrapper: {
+        backgroundColor:"#fff"
+    }
+})

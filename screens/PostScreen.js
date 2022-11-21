@@ -8,7 +8,10 @@ export default function PostScreen(props) {
     const {navigate, goback} = navigation;
     return (
         <Text onPress={() => {
-            navigate('UIScreen')
+            navigate('Thư viện')
+        }} style = {{
+            marginTop: 100,
+            fontSize: 30
         }}>This is PostScreen</Text>
     )
 }

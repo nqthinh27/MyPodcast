@@ -10,7 +10,6 @@ import {
 } from 'react-native'
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
     HomeScreen,
     FollowingScreen,
@@ -29,7 +28,6 @@ export default function Tabbar(props) {
             <Stack.Screen name={"PostScreen"} component={PostScreen}/>
             <Stack.Screen name={"Thư viện"} component={LibraryScreen}/>
             <Stack.Screen name={"Cài đặt"} component={SettingScreen}/>
-            <Stack.Screen name={"UIScreen"} component={UIScreen}/>  
         </Stack.Navigator>
     </NavigationContainer>
 }

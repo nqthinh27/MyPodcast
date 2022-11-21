@@ -1,5 +1,16 @@
 import React from "react";
-import { Text, View } from "react-native";
+import {
+    SafeAreaView,
+    Text,
+    View,
+    Image,
+    TouchableOpacity,
+    ImageBackground,
+    FlatList, 
+    StyleSheet
+} from 'react-native'
+import HeaderUI from "../navigation/HeaderUI";
+import SlideBar from "../components/SlideBar";
 
 export default function HomeScreen(props) {
     //navigation
@@ -7,8 +18,24 @@ export default function HomeScreen(props) {
     //function of navigate 
     const {navigate, goback} = navigation;
     return (
-        <Text onPress={() => {
-            navigate('FollowingScreen')
-        }}>This is HomeScreen</Text>
+        <SafeAreaView style = {styles.wrapper}>
+            {/* <Text onPress={() => {
+                navigate('Theo dõi')
+            }} style = {{
+                marginTop: 100,
+                fontSize: 30,
+            }}>This is HomeScreen</Text> */}
+            <HeaderUI/>
+            <SlideBar style = {styles.SlideBar}/>
+        </SafeAreaView>
     )
 }
+
+const styles =  StyleSheet.create({
+    wrapper: {
+        backgroundColor:"#fff"
+    },
+    SlideBar: {
+        backgroundColor: "#000"
+    }
+})
