@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/Feather'
 export default function HeaderUI(props) {
     return (
         <SafeAreaView style={styles.Header}>
-            <Image source={require('../assets/avatar.jpg')} style={styles.avatar} />
+            <Image source={{uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} style={styles.avatar} />
             {/* <View style={styles.blank}></View> */}
             <View style={styles.searchSection}>
                 <Icon style={styles.searchIcon} name="search" size={20} color="#ccc" />

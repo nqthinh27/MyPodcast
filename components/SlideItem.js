@@ -9,8 +9,8 @@ export default function SlideItem({ item }) {
         <View style={styles.cardView}>
             <Image style={styles.image} source={{ uri: item.url }} />
             <View style={styles.textView}>
-                <Text style={styles.itemTitle}> {item.title}</Text>
-                <Text style={styles.itemDescription}>{item.description}</Text>
+                <Text style={styles.itemTitle} numberOfLines={1}> {item.title}</Text>
+                <Text style={styles.itemDescription} numberOfLines={2}>{item.description}</Text>
             </View>
         </View>
     )

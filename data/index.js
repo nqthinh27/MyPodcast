@@ -1,5 +1,17 @@
-import { SlideBarData } from "./SlideBarData";
+import {
+    SlideBarData,
+    ForYouData,
+    NewReleaseData,
+    PopularData,
+    RecommendData,
+    ToptrendingData
+} from "../data";
 
 export {
-    SlideBarData
+    SlideBarData,
+    ForYouData,
+    NewReleaseData,
+    PopularData,
+    RecommendData,
+    ToptrendingData
 }
