@@ -8,13 +8,17 @@ import {
     ImageBackground,
     FlatList,
     StyleSheet,
-    ScrollView
+    ScrollView,
+    Alert
 } from 'react-native'
-import HeaderUI from "../navigation/HeaderUI";
+import HeaderUI from "../components/HeaderUI";
 import SlideBar from "../components/SlideBar";
 import PopularList from "../components/PopularList";
 import TopTrendingList from "../components/TopTrendingList"
 import VerticalPodcast from "../components/VerticalPodcast";
+import SignIn from "./SignIn";
+import MainNavigator from "../navigation/MainNavigator";
+import Profile from "./Profile"
 
 export default function HomeScreen(props) {
     //navigation
@@ -25,12 +29,14 @@ export default function HomeScreen(props) {
         <SafeAreaView style={styles.wrapper}>
             <ScrollView>
                 {/* <Text onPress={() => {
-                navigate('Theo dõi')
+                navigate('Đăng nhập')
+                // Alert.alert('aaa','aaa')
             }} style = {{
                 marginTop: 100,
                 fontSize: 30,
             }}>This is HomeScreen</Text> */}
-                <HeaderUI />
+                {/* <MainNavigator /> */}
+                <HeaderUI></HeaderUI>
                 <SlideBar style={styles.SlideBar} />
                 <Text style={styles.title}>Bảng xếp hạng</Text>
                 <TopTrendingList></TopTrendingList>
@@ -38,6 +44,8 @@ export default function HomeScreen(props) {
                 <PopularList></PopularList>
                 <Text style={[styles.title, styles.blank]}>Thư giãn cuối ngày</Text>
                 <PopularList></PopularList>
+                {/* <SignIn></SignIn> */}
+                <Profile/>
             </ScrollView>
         </SafeAreaView>
     )

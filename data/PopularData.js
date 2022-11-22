@@ -1,27 +1,67 @@
-export const SlideBarData =
-    [{
-        avtUrl: '',
-        audioUrl: '',
-        title: '',
-        author: '',
-        description: '',
+export const PopularData =
+    [
+    {
+        avtUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Ftinhyeu.jpg?alt=media&token=60938173-ab1c-4844-82fd-ce8642fc7170',
+        audioUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fpodcast%2Fchuyentinhyeu.mp3?alt=media&token=ee298dd8-cd4f-4463-8c76-ad7ea3879f51',
+        title: 'Bạn tưởng đó là tình yêu, nhưng hoá ra không phải',
+        author: 'Re Podcast',
+        descripttion: 'Chúng ta thường vội vã coi một điều gì đó là tình yêu nhưng hóa ra, mọi thứ không phải vậy. Lao vào sự ảo tưởng quá sớm, người ta đã vô tình bỏ qua những dấu hiệu để giúp mình nhận ra, đó không phải là tình yêu',
         id: 1,
     },
     {
-        avtUrl: '',
-        audioUrl: '',
-        title: '',
-        author: '',
-        description: '',
+        avtUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/populars%2Fimage%2Fdamme.jpg?alt=media&token=a16beb4d-08a1-4b75-ba64-4770273ad1f1',
+        audioUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/populars%2Faudio%2Fdamme.mp3?alt=media&token=4f69f48b-4f3e-4c9e-a3ec-8900fbf6f5cf',
+        title:'Đi tìm đam mê',
+        author:'Khánh Vy',
+        description:'Ai cũng có một số ước mơ từ bé đến lớn, nhưng không phải ai cũng có sẵn niềm đam mê từ trước. Có người mơ làm kỹ sư, bác sĩ, có người lại thích làm phi hành gia,… Tuy nhiên, ước mơ lại hơi khác hơn so với niềm đam mê. Ước mơ chỉ là những ý tưởng lóe lên trong đầu. Còn đam mê sẽ to lớn hơn, có sự thôi thúc mãnh liệt và muốn đạt được nó.',
         id: 2,
     },
     {
-        avtUrl: '',
-        audioUrl: '',
-        title: '',
-        author: '',
-        description: '',
+        avtUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/populars%2Fimage%2Faplucthicu.jpg?alt=media&token=e36a0d8c-9748-43cf-82ee-e22d3258f85f',
+        audioUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/populars%2Faudio%2Faplucthicu.mp3?alt=media&token=16c18755-b543-49a0-b2c7-9f128c53abf6',
+        title:'Áp lực thi cử',
+        author:'SunHuyn',
+        description:'Học hành căng thẳng, áp lực thi vào lớp chọn, trường chuyên khiến nhiều học sinh rơi vào căng thẳng, rối loạn lo âu, stress, trầm cảm. Có em sợ thi trượt, có em do áp lực thi vào trường chuyên… dẫn đến lo lắng, lâu dần trở thành stress, trầm cảm',
         id: 3,
-    }]
-
-    //3 cái, ảnh ngang
+    },
+    {
+        avtUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/populars%2Fimage%2Ft%E1%BB%8Bnhbandep1.jpg?alt=media&token=b2f32e52-28be-42eb-9eb0-fc0a06f67e5b',
+        audioUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/popular%2Faudio%2Fcach_de_tinh_ban_tu_vuc_tham_tien_toi_thang_hoa_cung_long_chun_dcnntk_5_-4602840316218555029.mp3?alt=media&token=cf693f37-6bd0-47bd-b3d5-af72dbc58cb6',
+        title: 'Xây dựng tình bạn đẹp',
+        author: 'Tun Cảm Ơn',
+        description: ' Bạn là người ta cảm thấy thoải mái khi ở cùng, ta sẵn lòng trung thành, đem lại cho ta lời chúc phúc và ta cảm thấy biết ơn vì có họ trong đờ',
+        id: 4,
+    },
+    {
+        avtUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fgiadinh.jpg?alt=media&token=f11efdcd-ac23-43b7-b8db-d484e13d86e9',
+        audioUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fpodcast%2Fthieuganketgiadinh.mp3?alt=media&token=aa0c5e72-02d0-409b-b026-6a633392e93e',
+        title:'Tình cảm gia đình',
+        author:'The Presen Writer Podcast',
+        descripttion:'Có bao giờ bạn cảm thấy thiếu gắn kết với gia đình? Bạn cảm thấy tủi thân, cô đơn và cả tội lỗi khi nghĩ về mối quan hệ của mình với các thành viên trong gia đình? Tin mình đi, bạn không đơn độc. Rất nhiều người (bao gồm cả mình) cũng từng có những cảm xúc như thế ',
+        id: 5,
+    },
+    {
+        avtUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/populars%2Fimage%2Fyeungtruongthanh.jpg?alt=media&token=53cfba5f-fd35-48e5-8b9e-9c70e724ce31',
+        audioUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/popular%2Faudio%2Fyeu_mot_nguoi_truong_thanh_cam_giac_nhu_the_nao_nguyen_huu_tri_-6161477712710468297.mp3?alt=media&token=71ada344-5a2e-41c9-9cee-a102508502df',
+        title: 'Yêu một người trưởng thành',
+        author: 'Nguyễn Hữu Trí',
+        description: 'Những người thực sự trưởng thành, họ sẽ không coi tình yêu là duy nhất, học cũng không sống chết chỉ vì yêu. Nhưng đồng thời, họ cũng xem tình yêu là thứ đáng trân quý trong đời. Bởi vì họ đã từng va vấp, đã từng đi qua những tổn thương',
+        id: 6,
+    },
+    {
+        avtUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/populars%2Fimage%2Faplucdongtranglua1.jpg?alt=media&token=94aed0b2-96f8-4d61-9d5e-e44e07881342',
+        audioUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/populars%2Faudio%2Faplucdongtranglua.mp3?alt=media&token=1881b684-e928-400a-8364-0db142873c6c',
+        title:'Áp lực đồng trang lứa',
+        author:'Sunhuyn',
+        description:'“Peer pressure” hay còn được gọi là “áp lực đồng trang lứa”, là hiện tượng xảy ra khi bạn trẻ chịu ảnh hưởng bởi nhóm bạn cùng tuổi, các bạn cùng lớp hay đồng nghiệp. Nó hiện diện từ sâu trong tiềm thức, khiến cho chúng ta làm những phép so sánh giữa bản thân và những người đồng lứa tuổi.',
+        id: 7,
+    },
+    {
+        avtUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fidol.jpg?alt=media&token=1526e7af-90c1-47da-a2c1-97d70346e06e',
+        audioUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fpodcast%2Fidolgioitre.mp3?alt=media&token=f90868da-6e1d-4490-acf2-5ec64d0416f3',
+        title:'Idol giới trẻ',
+        author:'Sóng Radio',
+        descripttion:'Chắc hẳn ngày nay, gen Z nào cũng có cho mình một người nổi tiếng làm hình mẫu lý tưởng đúng không? Người đó có thể ưu tú trong lĩnh vực của mình, cũng có thể là một người có lối sống tích cực, truyền cảm hứng cho mọi người xung quanh,... khiến các bạn cảm thấy thuyết phục và yêu thương vô điều kiện, Tuy nhiên, chẳng ai có thể hoàn hảo không tì vết. Bên cạnh những bạn sử dụng lí trí để thần tượng ai đó, cũng có một bộ phận bạn trẻ mù quáng trước những sai lầm của người nổi tiếng mình thích, thậm chí là cổ súy cho những người đi lên bằng chiêu trò, hành vi sai lệch',
+        id: 8,
+    },
+]

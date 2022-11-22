@@ -4,14 +4,25 @@ import {
     View,
     Image,
     StyleSheet,
-    TextInput
+    TextInput,
+    Alert
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather'
 
 export default function HeaderUI(props) {
+    //navigation
+    // const { navigation, route } = props;
+    // //function of navigate 
+    // const { navigate, goback } = navigation;
     return (
         <SafeAreaView style={styles.Header}>
-            <Image source={{uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} style={styles.avatar} />
+            <Image source={
+                {uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} 
+                style={styles.avatar} 
+                onPress={()=>{
+                    // props.navigation.navigate('Theo dõi');
+                    // Alert.alert('aaa','aaa')
+                }} />
             {/* <View style={styles.blank}></View> */}
             <View style={styles.searchSection}>
                 <Icon style={styles.searchIcon} name="search" size={20} color="#ccc" />
@@ -23,6 +34,9 @@ export default function HeaderUI(props) {
                 />
             </View>
             <Icon style={styles.bell} name="bell" size={26} color="#000" />
+            {/* <View><Text onPress={()=> {
+                // props.navigation.navigate('Theo dõi');
+            }}>abc</Text></View> */}
         </SafeAreaView>
     )
 }

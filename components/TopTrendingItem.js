@@ -5,15 +5,15 @@ import Icon from 'react-native-vector-icons/Feather'
 export default function TopTrendingItem(props) {
     return (
         <View style={styles.wrapper}>
-                <Image source={{ uri: 'https://media.thieunien.vn/thumb/uploads/2021/07/12/tiet-lo-muc-thu-nhap-dang-ne-cua-cac-tiktoker-tun-pham-thu-ve-100-trieu-tuan-le-bong-hai-ninh-nguyen-cung-chang-kem-canh_19555.jpg' }} style={styles.avatar} />
+                <Image source={{ uri: props.avtUrl }} style={styles.avatar} />
                 <View style={styles.textSection}>
                     <View style={styles.ranking}>
-                        <Text style={styles.number}>1</Text>
+                        <Text style={styles.number}>{props.ranking}</Text>
                         <View style={styles.dot}></View>
                     </View>
                     <View style={styles.content}>
-                        <Text style={styles.title} numberOfLines={1}>Giới hạn của bản thân</Text>
-                        <Text style={styles.author} numberOfLines={1}>Tun Phạm</Text>
+                        <Text style={styles.title} numberOfLines={1}>{props.title}</Text>
+                        <Text style={styles.author} numberOfLines={1}>{props.author}</Text>
                     </View>
                 </View>
                 {/* <Icon style={styles.more_btn} name="more-horizontal" size={26} color="#000" /> */}
@@ -22,7 +22,7 @@ export default function TopTrendingItem(props) {
 }
 
 const styles = StyleSheet.create({
-    wrapper: {
+        wrapper: {
         // backgroundColor: '#EDEDED',
         width: 325,
         // borderRadius: 10,
@@ -61,11 +61,13 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 17,
-        fontWeight: "600"
+        fontWeight: "600",
+        width: 200
     },
     author: {
         color: "#414141",
-        paddingVertical:2
+        paddingVertical:2,
+        width: 200
     },
     more_btn: {
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native";
-import HeaderUI from "../navigation/HeaderUI";
+import HeaderUI from "../components/HeaderUI";
 
 export default function FollowingScreen(props) {
     //navigation
