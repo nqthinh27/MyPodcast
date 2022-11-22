@@ -5,8 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import VerticalPodcastB from '../components/VerticalPodcastB'
 import {MyPopularData} from '../data/MyPopularData'
 
-export default function App() {
-  // {console.log(MyPopularData)}
+export default function Profile() {
   return (
     <View style={styles.main}>
       <View style={styles.header}>

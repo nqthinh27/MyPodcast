@@ -16,8 +16,8 @@ export default function HeaderUI(props) {
     // const { navigate, goback } = navigation;
     return (
         <SafeAreaView style={styles.Header}>
-            <Image source={
-                {uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} 
+            <Image 
+                source={{uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} 
                 style={styles.avatar} 
                 onPress={()=>{
                     // props.navigation.navigate('Theo dõi');

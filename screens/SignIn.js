@@ -4,11 +4,7 @@ import colors from '../constants/colors'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 
-export default function SignIn(props) {
-  // navigation
-  // const { navigation, route } = props;
-  //function of navigate 
-  // const { navigate, goback } = navigation;
+export default function SignIn() {
   return (
     <View style={styles.main}>
       <View style={styles.header}>
@@ -96,11 +92,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#C0C0C0',
-    width: '90%',
-    marginTop: 46,
+    width : '90%',
+    marginTop : 46,
     justifyContent: "space-between"
   },
+
   textForgot: {
+    flex: 1,
     color: "#FF6363"
   },
 

@@ -3,7 +3,7 @@ import React from 'react'
 import colors from '../constants/colors'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-export default function App() {
+export default function Report() {
   return (
     <View style={styles.main}>
       <View style={styles.header}>
