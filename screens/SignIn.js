@@ -4,7 +4,7 @@ import colors from '../constants/colors'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 
-export default function App() {
+export default function SignIn() {
   return (
     <View style={styles.main}>
       <View style={styles.header}>
@@ -94,9 +94,14 @@ const styles = StyleSheet.create({
     borderBottomColor: '#C0C0C0',
     width : '90%',
     marginTop : 46,
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
+  textInput2: {
+    flex: 4,
+  },
+
   textForgot: {
+    flex: 1,
     color: "#FF6363"
   },
 
