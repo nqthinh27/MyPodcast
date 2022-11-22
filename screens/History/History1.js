@@ -21,7 +21,6 @@ export default function History1() {
         
       </View>
 
-      <LibraryScreen/>
     </View>
   )
 }
