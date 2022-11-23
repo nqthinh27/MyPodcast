@@ -1,14 +1,19 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import colors from '../../constants/colors'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Entypo'
 
-export default function OTPcodeSU() {
+
+export default function OTPcodeSU(props) {
+  //navigation
+  const { navigation, route } = props;
+  //function of navigate 
+  const { navigate, goback } = navigation;
   return (
     <View style={styles.main}>
       <View style={styles.header}>
         <Icon style={styles.back}
-          name = {'angle-left'}
+          name = {'chevron-left'}
           size={26}
         />
         <Text style={styles.textHeader}>Xác Minh</Text>
@@ -21,17 +26,22 @@ export default function OTPcodeSU() {
         </View>
         <View style={styles.textInputView1}>
           <TextInput style={styles.textInput1}
-            placeholder='x x x x x'
+            placeholder='x x x x x x'
             
           ></TextInput>
         </View>
         <View style={styles.textView2}>
-          <Text style={styles.text2}>Nếu bạn chưa nhận được mã! </Text>
-          <Text style={styles.text3}>Gửi lại</Text>
+          <Text style={styles.text2}>Chưa nhận được mã OTP? </Text>
+          <Text 
+          style={styles.text3}
+          onPress = {() => {alert("Gửi thành công mã OTP")}}>Gửi lại</Text>
         </View>
-        <View style={styles.btnView1}>
+        <TouchableOpacity 
+        style={styles.btnView1} 
+        onPress={()=> {
+          navigate('Success')}}>
           <Text style={styles.btn1}>Xác nhận</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   )
@@ -40,6 +50,7 @@ export default function OTPcodeSU() {
 const styles = StyleSheet.create({
   main : {
     flex: 1,
+    backgroundColor:"#fff"
   },
 
   header : {
@@ -74,7 +85,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     fontWeight : 'bold',
-    fontSize : 16,
+    fontSize : 17,
   },
   textInputView1 : {
     marginHorizontal : 20,
@@ -98,7 +109,7 @@ const styles = StyleSheet.create({
   },
   text2 : {
     color : '#B0ADAD',
-    fontSize : 13,
+    fontSize : 14,
   },
   text3 : {
     color : 'red',
@@ -116,7 +127,9 @@ const styles = StyleSheet.create({
     borderColor : 'white'
   },
   btn1 : {
-    color : 'white'
+    color : 'white',
+    fontSize: 17,
+    fontWeight: 'bold'
   }
   
   

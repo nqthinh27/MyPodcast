@@ -17,7 +17,32 @@ export default function FollowingScreen(props) {
         <ScrollView style={{
             top: 40
         }}>
-            <HeaderUI />
+            {/* ==========================================HEADER========================================== */}
+            <View style={styles.Header}>
+                    <TouchableOpacity onPress={() => {
+                        navigate('SignIn');
+                        // Alert.alert('aaa','aaa')
+                    }}>
+                        <Image
+                            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5' }}
+                            style={styles.avatar} />
+                    </TouchableOpacity>
+                    <View style={styles.searchSection}>
+                        <Icon style={styles.searchIcon} name="search" size={20} color="#ccc" />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Tìm kiếm podcast, tác giả, album,..."
+                        // onChangeText={(searchString) => { this.setState({ searchString }) }}
+                        // underlineColorAndroid="transparent"
+                        />
+                    </View>
+                    <TouchableOpacity>
+                        <Image
+                            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/icon%2Fico_bell1.png?alt=media&token=85036c85-d95d-4b34-bff2-7f193a3149a4' }}
+                            style={styles.bell} />
+                    </TouchableOpacity>
+                </View>
+
             <View style={{
                 top: 20
             }}>
@@ -36,3 +61,44 @@ export default function FollowingScreen(props) {
         </ScrollView>
     )
 }
+const styles = StyleSheet.create({
+    Header: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 16
+    },
+    avatar: {
+        width: 35,
+        height: 35,
+        borderRadius: 35,
+    },
+    input: {
+        height: 32,
+        marginRight: 12,
+        backgroundColor: "#F0F0F0",
+        // borderRadius: 32,
+        padding: 0,
+        flex: 1,
+        color: '#A0A0A0'
+    },
+    searchSection: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F0F0F0',
+        color: '#A0A0A0',
+        borderRadius: 32,
+        marginHorizontal: 8
+    },
+    searchIcon: {
+        paddingVertical: 8,
+        paddingRight: 4,
+        paddingLeft: 10
+    },
+    bell: {
+        height: 26,
+        width: 26,
+    }
+})

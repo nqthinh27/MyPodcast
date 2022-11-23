@@ -1,10 +1,14 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import colors from '../../constants/colors'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 
-export default function SignUp() {
+export default function SignUp(props) {
+  //navigation
+  const { navigation, route } = props;
+  //function of navigate 
+  const { navigate, goback } = navigation;
   return (
     <View style={styles.main}>
       <View style={styles.header}>
@@ -26,22 +30,32 @@ export default function SignUp() {
         <View style={styles.textInputView2}>
           <TextInput style={styles.textInput2}
             placeholder='Mật khẩu'
-          ></TextInput>
+            secureTextEntry={true}
+            ></TextInput>
         </View>
 
         <View style={styles.textInputView2}>
           <TextInput style={styles.textInput2}
             placeholder='Nhập lại Mật khẩu'
+            secureTextEntry={true}
           ></TextInput>
         </View>
         
-        <View style={styles.btnView1}>
+        <TouchableOpacity 
+        style={styles.btnView1} 
+        onPress={()=> {
+            navigate('OTPcodeSU');
+        }}>
           <Text style={styles.btn1}>Đăng ký</Text>
-        </View>
+        </TouchableOpacity>
 
         <View style={styles.textView2}>
           <Text style={styles.text2}>Đã có tài khoản? </Text>
-          <Text style={styles.text3}>Đăng nhập</Text>
+          <Text 
+          style={styles.text3} 
+          onPress={()=> {
+            navigate('SignIn');
+        }}>Đăng nhập</Text>
         </View>
 
       </View>
@@ -102,6 +116,13 @@ const styles = StyleSheet.create({
     marginTop : 63,
 
   },
+  textInput1: {
+    fontSize:15
+  },
+  textInput2: {
+    fontSize:15,
+    width: "100%"
+  },
   text2 : {
     color : '#B0ADAD',
     fontSize : 15,
@@ -126,7 +147,9 @@ const styles = StyleSheet.create({
 
   },
   btn1 : {
-    color : 'white'
+    color : 'white',
+    fontSize:17,
+    fontWeight: 'bold'
   },
   
 })

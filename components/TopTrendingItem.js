@@ -5,24 +5,24 @@ import Icon from 'react-native-vector-icons/Feather'
 export default function TopTrendingItem(props) {
     return (
         <View style={styles.wrapper}>
-                <Image source={{ uri: props.avtUrl }} style={styles.avatar} />
-                <View style={styles.textSection}>
-                    <View style={styles.ranking}>
-                        <Text style={styles.number}>{props.ranking}</Text>
-                        <View style={styles.dot}></View>
-                    </View>
-                    <View style={styles.content}>
-                        <Text style={styles.title} numberOfLines={1}>{props.title}</Text>
-                        <Text style={styles.author} numberOfLines={1}>{props.author}</Text>
-                    </View>
+            <Image source={{ uri: props.avtUrl }} style={styles.avatar} />
+            <View style={styles.textSection}>
+                <View style={styles.ranking}>
+                    <Text style={styles.number}>{props.ranking}</Text>
+                    <View style={styles.dot}></View>
                 </View>
-                {/* <Icon style={styles.more_btn} name="more-horizontal" size={26} color="#000" /> */}
+                <View style={styles.content}>
+                    <Text style={styles.title} numberOfLines={1}>{props.title}</Text>
+                    <Text style={styles.author} numberOfLines={1}>{props.author}</Text>
+                </View>
+            </View>
+            {/* <Icon style={styles.more_btn} name="more-horizontal" size={26} color="#000" /> */}
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-        wrapper: {
+    wrapper: {
         // backgroundColor: '#EDEDED',
         width: 325,
         // borderRadius: 10,
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     ranking: {
-        marginLeft:17,
-        marginRight:10
+        marginLeft: 17,
+        marginRight: 10
     },
     content: {
 
@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
         fontWeight: "600"
     },
     dot: {
-        width:7,
-        height:7,
+        width: 7,
+        height: 7,
         backgroundColor: "#000",
         borderRadius: 7,
         marginTop: 7
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     },
     author: {
         color: "#414141",
-        paddingVertical:2,
+        paddingVertical: 2,
         width: 200
     },
     more_btn: {

@@ -12,9 +12,11 @@ export default function SlideBar(props) {
                 data={SlideBarData}
                 renderItem = {({item}) => {
                     return <SlideItem item={item}/>
-                }}>
+                }}
+                showsHorizontalScrollIndicator={false}
+                scrollEventThrottle={16}
+                pagingEnabled/>
          {/* {SlideBarData.map(eachData => <SlideItem item={eachData}/>)} */}
-    </FlatList>
 }
 
 

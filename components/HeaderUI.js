@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/Feather'
 export default function HeaderUI(props) {
     //navigation
     // const { navigation, route } = props;
-    // //function of navigate 
+    // // //function of navigate 
     // const { navigate, goback } = navigation;
     return (
         <SafeAreaView style={styles.Header}>
@@ -34,9 +34,9 @@ export default function HeaderUI(props) {
                 />
             </View>
             <Icon style={styles.bell} name="bell" size={26} color="#000" />
-            {/* <View><Text onPress={()=> {
-                // props.navigation.navigate('Theo dõi');
-            }}>abc</Text></View> */}
+            <View><Text onPress={()=> {
+                navigate('Follow');
+            }}>abc</Text></View>
         </SafeAreaView>
     )
 }

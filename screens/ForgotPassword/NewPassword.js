@@ -1,9 +1,13 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import colors from '../../constants/colors'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-export default function NewPassword() {
+export default function NewPassword(props) {
+  //navigation
+  const { navigation, route } = props;
+  //function of navigate 
+  const { navigate, goback } = navigation;
   return (
     <View style={styles.main}>
       <View style={styles.header}>
@@ -21,7 +25,8 @@ export default function NewPassword() {
       </View>
       <View style={styles.textInputView1}>
         <TextInput style={styles.textInput1}
-          placeholder='x x x x x x x x'
+          placeholder=''
+          secureTextEntry={true}
         ></TextInput>
       </View>
 
@@ -30,13 +35,18 @@ export default function NewPassword() {
       </View>
       <View style={styles.textInputView1}>
         <TextInput style={styles.textInput1}
-          placeholder='x x x x x x x x'
+          placeholder=''
+          secureTextEntry={true}
         ></TextInput>
       </View>
 
-      <View style={styles.btnView1}>
-        <Text style={styles.btn1}>Xác Nhận</Text>
-      </View>
+      <TouchableOpacity style={styles.btnView1}
+      onPress={() => {
+        navigate('SuccessFP');
+      }}>
+        <Text 
+        style={styles.btn1}>Xác Nhận</Text>
+      </TouchableOpacity>
       
     </View>
     </View>
@@ -47,6 +57,7 @@ export default function NewPassword() {
 const styles = StyleSheet.create({
   main : {
     flex: 1,
+    backgroundColor:"#fff"
   },
 
   header : {
@@ -78,7 +89,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     fontWeight : 'bold',
-    fontSize : 16,
+    fontSize : 17,
   },
   textInputView1 : {
     marginHorizontal : 20,
@@ -90,6 +101,7 @@ const styles = StyleSheet.create({
   },
 
   textInput1 : {
+    fontSize: 15
   },
 
   btnView1 : {
@@ -104,7 +116,9 @@ const styles = StyleSheet.create({
     borderColor : 'white'
   },
   btn1 : {
-    color : 'white'
+    color : 'white',
+    fontSize: 17,
+    fontWeight: 'bold'
   }
   
 })

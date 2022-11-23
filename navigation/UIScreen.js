@@ -18,15 +18,15 @@ const screenOptions = ({route}) => ({
     tabBarIcon: ({focused, color, size}) => {
         let screenName = route.name;
         let iconName = "";
-        if(screenName == "Trang chủ") {
+        if(screenName == "Home") {
             iconName = "home"
-        } else if(screenName == "Theo dõi") {
+        } else if(screenName == "Follow") {
             iconName = "group"
-        } else if(screenName == "PostScreen") {
+        } else if(screenName == "Post") {
             iconName = "plus"
-        } else if(screenName == "Thư viện") {
+        } else if(screenName == "Library") {
             iconName = "bookmark"
-        } else if(screenName == "Cài đặt") {
+        } else if(screenName == "Setting") {
             iconName = "gear"
         }
         return <Icon
@@ -37,14 +37,36 @@ const screenOptions = ({route}) => ({
 });
 export default function UIScreen(props) {
     return (
-        <NavigationContainer>
-        <Tab.Navigator initialRouteName="Trang chủ" screenOptions={screenOptions}>
-            <Tab.Screen name="Trang chủ" component={HomeScreen}/>
-            <Tab.Screen name="Theo dõi" component={FollowingScreen}/>
-            <Tab.Screen name="PostScreen" component={PostScreen}/>
-            <Tab.Screen name="Thư viện" component={LibraryScreen}/>
-            <Tab.Screen name="Cài đặt" component={SettingScreen}/>
+        <Tab.Navigator initialRouteName="Home" screenOptions={screenOptions}>
+            <Tab.Screen 
+            name="Home" 
+            component={HomeScreen} 
+            options={{
+                tabBarLabel: 'Trang chủ'
+            }}/>
+            <Tab.Screen 
+            name="Follow" 
+            component={FollowingScreen}
+            options={{
+                tabBarLabel: 'Theo dõi'
+            }}/>
+            <Tab.Screen 
+            name="Post" 
+            component={PostScreen}
+            options={{
+                tabBarLabel: 'Đăng bài'
+            }}/>
+            <Tab.Screen 
+            name="Library"
+            component={LibraryScreen}
+            options={{
+                tabBarLabel: 'Thư viện'
+            }}/>
+            <Tab.Screen 
+            name="Setting" 
+            component={SettingScreen}options={{
+                tabBarLabel: 'Cài đặt'
+            }}/>
         </Tab.Navigator>
-        </NavigationContainer>
     )
 }

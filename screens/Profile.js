@@ -1,17 +1,24 @@
 import { StyleSheet, Text, TextInput, View, Image, ScrollView } from 'react-native'
 import React from 'react'
 import colors from '../constants/colors'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Entypo'
 import VerticalPodcastB from '../components/VerticalPodcastB'
 import {MyPopularData} from '../data/MyPopularData'
 
-export default function Profile() {
+export default function Profile(props) {
+  //navigation
+  const { navigation, route } = props;
+  //function of navigate 
+  const { navigate, goback } = navigation;
   return (
     <View style={styles.main}>
       <View style={styles.header}>
         <Icon style={styles.back}
-          name={'angle-left'}
+          name={'chevron-left'}
           size={26}
+          onPress={()=> {
+            navigate('UIScreen');
+        }}
         />
         <Text style={styles.textHeader}>Trang cá nhân</Text>
         <Text> </Text>

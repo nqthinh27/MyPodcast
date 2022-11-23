@@ -22,7 +22,7 @@ export default function Success(props) {
         />
 
         <View style={styles.textView1}>
-          <Text style={styles.text1}>Đăng ký thành công!</Text>
+          <Text style={styles.text1}>Đổi mật khẩu thành công!</Text>
         </View>
 
         <TouchableOpacity

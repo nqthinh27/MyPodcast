@@ -1,15 +1,19 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import colors from '../constants/colors'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Entypo'
 
 
-export default function SignIn() {
+export default function SignIn(props) {
+  //navigation
+  const { navigation, route } = props;
+  //function of navigate 
+  const { navigate, goback } = navigation;
   return (
     <View style={styles.main}>
       <View style={styles.header}>
         <Icon style={styles.back}
-          name={'angle-left'}
+          name={'chevron-left'}
           size={26}
         />
         <Text style={styles.textHeader}>Đăng nhập</Text>
@@ -26,25 +30,40 @@ export default function SignIn() {
         <View style={styles.textInputView2}>
           <TextInput style={styles.textInput2}
             placeholder='Mật khẩu'
+            password={true}
           ></TextInput>
-          <Text style={styles.textForgot}>Quên mật khẩu?</Text>
+          <Text
+            style={styles.textForgot}
+            onPress={() => {
+              navigate('ForgotPasswordSc');
+            }}>Quên mật khẩu?</Text>
         </View>
 
-        <View style={styles.btnView1}>
-          <Text style={styles.btn1}>Đăng nhập</Text>
-        </View>
+        <TouchableOpacity
+          style={styles.btnView1}
+          onPress={() => {
+            navigate('Profile');
+          }} >
+          <Icon name="login" size={25} color="#fff" />
+          <Text style={styles.btn1}>  Đăng nhập</Text>
+        </TouchableOpacity>
 
-        <View style={styles.btnView2}>
-          <Text style={styles.btn2}>Đăng nhập với Google</Text>
-        </View>
-
-        <View style={styles.btnView3}>
-          <Text style={styles.btn3} >Đăng nhập với Facebook</Text>
-        </View>
+        <TouchableOpacity style={styles.btnView2} onPress={() => alert("Đăng nhập với Google")}>
+          <Icon name="google--with-circle" size={35} color="#ED5A4F" />
+          <Text style={styles.btn2}>  Đăng nhập với Google</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.btnView3} onPress={() => alert("Đăng nhập với Facebook")}>
+          <Icon name="facebook" size={33} color="#0571E6" />
+          <Text style={styles.btn3} >  Đăng nhập với Facebook</Text>
+        </TouchableOpacity>
 
         <View style={styles.textView2}>
-          <Text style={styles.text2}>Tạo tài khoản mới? </Text>
-          <Text style={styles.text3}>Đăng kí</Text>
+          <Text style={styles.text2}>Chưa có tài khoản? </Text>
+          <Text 
+          style={styles.text3}
+          onPress={()=> {
+            navigate('SignUp');
+        }}>Đăng kí</Text>
         </View>
 
       </View>
@@ -57,6 +76,7 @@ export default function SignIn() {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
+    backgroundColor: "#fff"
   },
 
   header: {
@@ -86,20 +106,22 @@ const styles = StyleSheet.create({
     borderBottomColor: '#C0C0C0',
     width: '90%',
   },
+  textInput1: {
+    fontSize: 15
+  },
 
   textInputView2: {
     flexDirection: "row",
     marginHorizontal: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#C0C0C0',
-    width : '90%',
-    marginTop : 46,
+    width: '90%',
+    marginTop: 46,
     justifyContent: "space-between"
   },
-
   textForgot: {
-    flex: 1,
-    color: "#FF6363"
+    color: "#FF6363",
+    fontSize: 15
   },
 
   textView2: {
@@ -110,6 +132,10 @@ const styles = StyleSheet.create({
     marginTop: 63,
 
   },
+  textInput2: {
+    flex: 1,
+    fontSize: 15
+  },
   text2: {
     color: '#B0ADAD',
     fontSize: 15,
@@ -118,7 +144,10 @@ const styles = StyleSheet.create({
   },
   text3: {
     fontSize: 15,
-    color: "#FF6363"
+    color: "#FF6363",
+    textDecorationLine: "underline",
+    textDecorationStyle: "solid",
+    textDecorationColor: "#FF6363",
   },
 
   btnView1: {
@@ -130,11 +159,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: 'white',
-    marginTop: 63
-
+    marginTop: 63,
+    flexDirection: 'row'
   },
   btn1: {
-    color: 'white'
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 17,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
 
@@ -147,13 +180,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: colors.primary,
-    marginTop: 30
-
+    marginTop: 30,
+    flexDirection: 'row'
   },
   btn2: {
     color: colors.primary,
     fontWeight: 'bold',
-    fontSize: 15
+    fontSize: 17
   },
 
   btnView3: {
@@ -165,12 +198,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30,
-    borderColor: colors.primary
+    borderColor: colors.primary,
+    flexDirection: 'row'
   },
   btn3: {
     color: colors.primary,
     fontWeight: 'bold',
-    fontSize: 15
+    fontSize: 17
   },
 
 
