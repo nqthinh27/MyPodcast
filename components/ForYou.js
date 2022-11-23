@@ -8,7 +8,7 @@ export default function ForYou(props) {
         <View style={styles.h1}>
             <Image
                 style={styles.imgUser}
-                source={require('../assets/user_Vu.png')} />
+                source={{uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} />
             <View style={{
                 flex: 1,
                 marginRight: 10,

@@ -1,8 +1,10 @@
 import React from 'react'
 import { View, StyleSheet, Text, Image, Dimensions } from 'react-native'
+import device from '../constants/device'
 // import Icon from 'react-native-vector-icons/Feather'
 
-export default function VerticalPodcast({ item }) {
+export default function VerticalPodcastB({ item }) {
+    console.log(device.width);
     return (
         <View style={styles.wrapper}>
                 <View style={styles.boxShadow}><Image source={{ uri: item.avtUrl }} style={styles.avatar} /></View>
@@ -17,15 +19,16 @@ export default function VerticalPodcast({ item }) {
 
 const styles = StyleSheet.create({
     wrapper: {
-        marginRight:10
+        marginRight:16,
+        width: 108
     },
     avatar: {
-        width: 96,
-        height: 96,
-        borderRadius: 8,
+        width: 108,
+        height: 108,
+        borderRadius: 10,
     },
     textSection: {
-        width: 96
+        width: 108
     },
     title: {
         fontSize: 16,

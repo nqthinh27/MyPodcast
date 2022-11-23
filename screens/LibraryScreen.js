@@ -3,14 +3,14 @@ import { Text, View, Image, TouchableOpacity, TextInput, FlatList, ScrollView, S
 import Icon from "react-native-vector-icons/FontAwesome5";
 import colors from "../constants/colors";
 import ForYouList from "../components/ForYouList";
-import HeaderUI from "../navigation/HeaderUI";
+import HeaderUI from "../components/HeaderUI";
 import fontSizes from "../constants/fontSizes";
 
 export default function LibraryScreen(props) {
     //navigation
-    const { navigation, route } = props;
-    //function of navigate 
-    const { navigate, goback } = navigation;
+    // const { navigation, route } = props;
+    // //function of navigate 
+    // const { navigate, goback } = navigation;
     return (
         <ScrollView style={{
             top: 40,

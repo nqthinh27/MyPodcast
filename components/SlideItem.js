@@ -7,7 +7,7 @@ const { width, height } = Dimensions.get('window')
 export default function SlideItem({ item }) {
     return (
         <View style={styles.cardView}>
-            <Image style={styles.image} source={{ uri: item.url }} />
+            <Image style={styles.image} source={{ uri: item.avtUrl }} />
             <View style={styles.textView}>
                 <Text style={styles.itemTitle} numberOfLines={1}> {item.title}</Text>
                 <Text style={styles.itemDescription} numberOfLines={2}>{item.description}</Text>

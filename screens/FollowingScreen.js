@@ -3,7 +3,7 @@ import { Text, View, Image, TouchableOpacity, TextInput, FlatList, ScrollView, i
 import ForYou from "../components/ForYou";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import colors from "../constants/colors";
-import HeaderUI from "../navigation/HeaderUI";
+import HeaderUI from "../components/HeaderUI";
 import FollowerList from "../components/FollowerList";
 import ForYouList from "../components/ForYouList";
 import fontSizes from "../constants/fontSizes";

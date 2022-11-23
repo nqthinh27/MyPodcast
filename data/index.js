@@ -4,7 +4,9 @@ import {
     NewReleaseData,
     PopularData,
     RecommendData,
-    ToptrendingData
+    MyNewReleaseData,
+    TopTrendingData,
+    MyPopularData
 } from "../data";
 
 export {
@@ -13,5 +15,7 @@ export {
     NewReleaseData,
     PopularData,
     RecommendData,
-    ToptrendingData
+    TopTrendingData,
+    MyNewReleaseData,
+    MyPopularData
 }

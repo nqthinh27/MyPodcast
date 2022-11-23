@@ -7,7 +7,7 @@ export default function Followers(props) {
     return (
         <View style={styles.wrapper}>
             <Image
-                source={require('../assets/users_follow.png')}
+                source={{uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} 
                 style={styles.userFlw}
             />
         </View>
