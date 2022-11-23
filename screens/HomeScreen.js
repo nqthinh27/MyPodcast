@@ -23,7 +23,9 @@ export default function HomeScreen(props) {
     const { navigate, goback } = navigation;
     return (
         <SafeAreaView style={styles.wrapper}>
-            <ScrollView>
+            <ScrollView style={{
+                top: 40
+            }}>
                 {/* <Text onPress={() => {
                 navigate('Theo dõi')
             }} style = {{
