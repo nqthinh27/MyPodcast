@@ -1,10 +1,11 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity, TextInput, FlatList, ScrollView, StyleSheet } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon from "react-native-vector-icons/Fontisto";
 import colors from "../constants/colors";
-import ForYouList from "../components/ForYouList";
-import HeaderUI from "../components/HeaderUI";
-import fontSizes from "../constants/fontSizes";
+import { ForYouData } from "../data/ForYouData";
+import HorizontalPodcast from "../components/HorizontalPodcast";
+import { SafeAreaView } from "react-navigation";
+import { RecommendData } from "../data/RecommendData";
 
 export default function LibraryScreen(props) {
     navigation
@@ -12,11 +13,10 @@ export default function LibraryScreen(props) {
     //function of navigate 
     const { navigate, goback } = navigation;
     return (
-        <ScrollView style={{
-            top: 40,
-        }}>
-            {/* ==========================================HEADER========================================== */}
-            <View style={styles.Header}>
+        <SafeAreaView style = {{backgroundColor:"#fff"}}>
+            <ScrollView >
+                {/* ==========================================HEADER========================================== */}
+                <View style={styles.Header}>
                     <TouchableOpacity onPress={() => {
                         navigate('SignIn');
                         // Alert.alert('aaa','aaa')
@@ -41,78 +41,101 @@ export default function LibraryScreen(props) {
                     </TouchableOpacity>
                 </View>
 
-                
-            <View><View style={styles.h1}>
-                <Text style={fontSizes.titleSmall}>Thư viện</Text>
-                <View style={{
-                    flexDirection: 'row',
-                    flex: 1,
-                }}>
-                    <View style={styles.h2}>
-                        <Icon
-                            name='star'
-                            style={{ paddingStart: 10, top: 3 }}
-                            size={18}
-                        />
-                        <Text style={styles.title2}>Đã lưu</Text>
-                    </View>
-                    <View style={styles.h2}>
-                        <Icon
-                            name='heart'
-                            style={{ paddingStart: 10, top: 3 }}
-                            size={18} color={'black'}
-                        />
-                        <Text style={styles.title2}>Yêu thích</Text>
-                    </View>
-                </View>
-                <View style={{
-                    flexDirection: 'row',
-                    flex: 1,
-                }}>
-                    <View style={styles.h2}>
-                        <Icon
-                            name='bookmark'
-                            style={{ paddingStart: 10, top: 3 }}
-                            size={18} color={'black'}
-                        />
-                        <Text style={styles.title2}>Nghe gần đây</Text>
-                    </View>
-                    <View style={styles.h2}>
-                        <Icon
-                            name='user'
-                            style={{ paddingStart: 10 }}
-                            size={18} color={'black'}
-                        />
-                        <Text style={styles.title2}>Tài khoản</Text>
-                    </View>
-                </View>
-            </View>
-                <View>
-                    <Text style={fontSizes.titleSmall}>Có thể bạn sẽ thích</Text>
 
-                    <ForYouList />
+                <View><View style={styles.h1}>
+                    <Text style={[styles.titleSmall, {marginTop:8}]}>Thư viện</Text>
+                    <View style={{
+                        flexDirection: 'row',
+                        flex: 1,
+                        marginLeft:16,
+                        justifyContent: "space-around",
+                        marginRight: 16,
+                    }}>
+                        <View style={styles.h2}>
+                            <Icon
+                                name='star'
+                                style={{ paddingStart: 10 }}
+                                size={18}
+                            />
+                            <Text style={styles.title2}>Đã lưu</Text>
+                        </View>
+                        <View style={{flex:1}}></View>
+                        <View style={styles.h2}>
+                            <Icon
+                                name='heart'
+                                style={{ paddingStart: 10 }}
+                                size={18} color={'black'}
+                            />
+                            <Text style={styles.title2}>Yêu thích</Text>
+                        </View>
+                    </View>
+                    <View style={{
+                        flexDirection: 'row',
+                        flex: 1,
+                        marginLeft:16, 
+                        justifyContent: "space-around",
+                        marginRight: 16
+                    }}>
+                        <View style={styles.h2}>
+                            <Icon
+                                name='bookmark'
+                                style={{ paddingStart: 10 }}
+                                size={18} color={'black'}
+                            />
+                            <Text style={styles.title2}>Nghe gần đây</Text>
+                        </View>
+                        <View style={{flex:1}}></View>
+                        <View style={styles.h2}>
+                            <Icon
+                                name='user'
+                                style={{ paddingStart: 10 }}
+                                size={18} color={'black'}
+                            />
+                            <Text style={styles.title2}>Tài khoản</Text>
+                        </View>
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+                    <View>
+                        <Text style={[styles.titleSmall, {paddingBottom: 10, paddingTop: 10}]}>Có thể bạn sẽ thích</Text>
+
+                        <View style={{ marginLeft: 16 }}>
+                            {RecommendData.map(item => {
+                                return (
+                                    <TouchableOpacity onPress={() => alert("123")}>
+                                        <HorizontalPodcast item={item} />
+                                    </TouchableOpacity>)
+                            })}
+                        </View>
+                    </View>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     h1: {
         paddingVertical: 10,
-        margin: 5,
+        // margin: 5,
         borderRadius: 40,
         height: 150,
     },
 
+    titleSmall:{
+        fontSize: 18,
+        fontWeight: "bold",
+        paddingLeft: 16
+    },
+
     h2: {
         height: 45,
-        width: 170,
+        width: 167,
         flexDirection: 'row',
-        paddingVertical: 10,
-        margin: 10,
+        // paddingVertical: 10,
+        marginVertical: 10,
         borderRadius: 30,
         backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        alignItems: "center",
     },
 
     title2: {
@@ -159,5 +182,5 @@ const styles = StyleSheet.create({
         height: 26,
         width: 26,
     }
-    
+
 })

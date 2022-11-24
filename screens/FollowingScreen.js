@@ -1,13 +1,14 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity, TextInput, FlatList, ScrollView, icon, FontAwesomeIcon, StyleSheet } from "react-native";
-import ForYou from "../components/ForYou";
+import ForYou from "../components/HorizontalPodcast";
 import Icon from 'react-native-vector-icons/Fontisto'
 import colors from "../constants/colors";
 import HeaderUI from "../components/HeaderUI";
 import FollowerList from "../components/FollowerList";
-import ForYouList from "../components/ForYouList";
 import fontSizes from "../constants/fontSizes";
 import { SafeAreaView } from "react-navigation";
+import { ForYouData } from "../data/ForYouData";
+import HorizontalPodcast from "../components/HorizontalPodcast";
 
 export default function FollowingScreen(props) {
     //navigation
@@ -15,11 +16,11 @@ export default function FollowingScreen(props) {
     //function of navigate 
     const { navigate, goback } = navigation;
     return (
-        <SafeAreaView  style={{backgroundColor : "#fff"}}>
+        <SafeAreaView style={{ backgroundColor: "#fff" }}>
 
-        <ScrollView>
-            {/* ==========================================HEADER========================================== */}
-            <View style={styles.Header}>
+            <ScrollView>
+                {/* ==========================================HEADER========================================== */}
+                <View style={styles.Header}>
                     <TouchableOpacity onPress={() => {
                         navigate('SignIn');
                         // Alert.alert('aaa','aaa')
@@ -44,30 +45,39 @@ export default function FollowingScreen(props) {
                     </TouchableOpacity>
                 </View>
 
-            <View style={{
-                top: 20
-            }}>
-                <View style={{flexDirection: 'row', alignItems: "center"}}>
-                    <Text style={styles.title}>Người dùng đang theo dõi  </Text>
-                    <Icon
-                        name='angle-right'
-                        style={{ bottom: 3}}
-                        size={15} color={'black'}
-                    />
-                </View>
-                <FollowerList/>
-                    <View style={{flexDirection: 'row', alignItems: "center", marginTop:10}}>
-                <Text style={styles.title}>Dành cho bạn  </Text>
-                <Icon
-                        name='angle-right'
-                        style={{ bottom: 3}}
-                        size={15} color={'black'}
-                    />
+                <View style={{
+                    top: 20
+                }}>
+                    <View style={{ flexDirection: 'row', alignItems: "center" }}>
+                        <Text style={styles.title}>Người dùng đang theo dõi  </Text>
+                        <Icon
+                            name='angle-right'
+                            style={{ bottom: 3 }}
+                            size={15} color={'black'}
+                        />
+                    </View>
+                    <FollowerList />
+                    <View style={{ flexDirection: 'row', alignItems: "center", marginTop: 10 }}>
+                        <Text style={[styles.title,{paddingTop:5, paddingBottom:3}]}>Dành cho bạn  </Text>
+                        <Icon
+                            name='angle-right'
+                            style={{ bottom: 3 }}
+                            size={15} color={'black'}
+                        />
 
                     </View>
-                <ForYouList/>
-            </View>
-        </ScrollView>
+
+                    <View style={{ marginLeft: 16, marginBottom: 20 }}>
+                        {ForYouData.map(item => {
+                            return (
+                                <TouchableOpacity onPress={() => alert("123")}>
+                                    <HorizontalPodcast item={item} />
+                                </TouchableOpacity>)
+                        })}
+                    </View>
+
+                </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }

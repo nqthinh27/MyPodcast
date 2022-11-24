@@ -22,24 +22,27 @@ import { NewReLeaseData } from "../data/NewReleaseData";
 import { SlideBarData } from "../data/SlideBarData";
 import SlideItem from "../components/SlideItem";
 import { RelexData } from "../data/RelexData";
+import variable from "../constants/variable";
+import { NavigationEvents } from "react-navigation";
 
 export default function HomeScreen(props) {
     //navigation
     const { navigation, route } = props;
     //function of navigate 
     const { navigate, goback } = navigation;
-    var isLogin = false;
+    // variable.isLogin = 2
     return (
         <SafeAreaView style={styles.wrapper}>
+            {/* <NavigationEvents onDidFocus={()=> this.setState({})} /> */}
             <ScrollView>
                 {/* ==========================================HEADER========================================== */}
                 <View style={styles.Header}>
                     <TouchableOpacity onPress={() => {
-                        navigate('SignIn');
+                        variable.isLogin == 0 ? navigate('SignIn') : navigate('Profile');
                         // Alert.alert('aaa','aaa')
                     }}>
                         <Image
-                            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5' }}
+                            source={{ uri:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5' }}
                             style={styles.avatar} />
                     </TouchableOpacity>
                     <View style={styles.searchSection}>
@@ -86,39 +89,39 @@ export default function HomeScreen(props) {
 
                     <View style={trendingStyles.contentWrapper}>
                         <View style={trendingStyles.contentSection}>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[0].avtUrl} title={TopTrendingData[0].title} author={TopTrendingData[0].author} ranking={TopTrendingData[0].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[1].avtUrl} title={TopTrendingData[1].title} author={TopTrendingData[1].author} ranking={TopTrendingData[1].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[2].avtUrl} title={TopTrendingData[2].title} author={TopTrendingData[2].author} ranking={TopTrendingData[2].ranking} />
                             </TouchableOpacity>
                         </View>
                     </View>
                     <View style={trendingStyles.contentWrapper}>
                         <View style={trendingStyles.contentSection}>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[3].avtUrl} title={TopTrendingData[3].title} author={TopTrendingData[3].author} ranking={TopTrendingData[3].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[4].avtUrl} title={TopTrendingData[4].title} author={TopTrendingData[4].author} ranking={TopTrendingData[4].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[5].avtUrl} title={TopTrendingData[5].title} author={TopTrendingData[5].author} ranking={TopTrendingData[5].ranking} />
                             </TouchableOpacity>
                         </View>
                     </View>
                     <View style={trendingStyles.contentWrapper}>
                         <View style={trendingStyles.contentSection}>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[6].avtUrl} title={TopTrendingData[6].title} author={TopTrendingData[6].author} ranking={TopTrendingData[6].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[7].avtUrl} title={TopTrendingData[7].title} author={TopTrendingData[7].author} ranking={TopTrendingData[7].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('SignIn') }} >
+                            <TouchableOpacity onPress={() => { navigate('Home') }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[8].avtUrl} title={TopTrendingData[8].title} author={TopTrendingData[8].author} ranking={TopTrendingData[8].ranking} />
                             </TouchableOpacity>
                         </View>

@@ -2,7 +2,7 @@ export const TopTrendingData =
     [{
         avtUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fsunhuyn.jpg?alt=media&token=395d7cdc-33a3-491b-85d4-1e2d459cde99',
         audioUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fpodcast%2Fgiatrisunoluc.mp3?alt=media&token=d1a6f25b-e9cb-48e1-992b-980e67070505',
-        title: 'Sự nổ lực đáng giá bao nhiêu',
+        title: 'Sự nỗ lực đáng giá bao nhiêu',
         author: 'Sunhuyn',
         descripttion: 'Sự nỗ lực đáng giá bao nhiêu? Liệu rằng cứ nỗ lực rồi sẽ thành công phải không? Sun mong những điều này có thể giúp bạn cảm thấy an lòng và tin tưởng vào bản thân mình hơn.',
         id: 1,

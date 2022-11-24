@@ -1,9 +1,9 @@
-import { StyleSheet, Text, TextInput, View, Image, ScrollView } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import colors from '../constants/colors'
 import Icon from 'react-native-vector-icons/Entypo'
 import VerticalPodcastB from '../components/VerticalPodcastB'
-import {MyPopularData} from '../data/MyPopularData'
+import { MyPopularData } from '../data/MyPopularData'
 
 export default function Profile(props) {
   //navigation
@@ -16,9 +16,9 @@ export default function Profile(props) {
         <Icon style={styles.back}
           name={'chevron-left'}
           size={26}
-          onPress={()=> {
+          onPress={() => {
             navigate('UIScreen');
-        }}
+          }}
         />
         <Text style={styles.textHeader}>Trang cá nhân</Text>
         <Text> </Text>
@@ -57,15 +57,21 @@ export default function Profile(props) {
           </View>
         </View>
 
-        <View style={styles.btnView1}>
+        <TouchableOpacity style={styles.btnView1}>
           <Text style={styles.btn1}>Chỉnh sửa trang cá nhân</Text>
-        </View>
+        </TouchableOpacity>
 
+        <Text style={styles.title}>Nổi bật</Text>
         <View style={styles.wrapper} horizontal={true}>
           {MyPopularData.map(item => {
-            return <VerticalPodcastB item={item} />
+            return (
+              <TouchableOpacity>
+                <VerticalPodcastB item={item} />
+              </TouchableOpacity>
+            )
           })}
         </View>
+        <Text style={styles.title}>Mới phát hành</Text>
 
       </View>
     </View>
@@ -75,10 +81,13 @@ export default function Profile(props) {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
+    backgroundColor: "#fff"
   },
   wrapper: {
-        marginLeft:32,
-        flexDirection: 'row'
+    marginLeft: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 10
   },
   header: {
     flex: 1,
@@ -88,14 +97,20 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "flex-start"
   },
-
+  title: {
+    marginLeft: 16,
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginTop: 6,
+    marginBottom: 10
+  },
   textHeader: {
     fontWeight: "bold",
     fontSize: 21
   },
   container: {
     flex: 20,
-    alignItems: 'center',
+    // alignItems: 'center',
     marginTop: 5
 
   },
@@ -154,8 +169,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#D6D6D6",
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
+    marginVertical: 10,
     borderColor: 'white',
+    alignSelf: 'center'
     // paddingHorizontal: 40
   },
 
@@ -193,7 +209,7 @@ const styles = StyleSheet.create({
   },
   btn1: {
     fontSize: 15,
-    fontWeight: "500"
+    fontWeight: "500",
   }
 
 })

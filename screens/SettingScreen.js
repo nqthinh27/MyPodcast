@@ -14,6 +14,7 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 import colors from "../constants/colors";
 import fontSizes from "../constants/fontSizes";
+import variable from "../constants/variable";
 
 export default function SettingScreen(props) {
     //navigation
@@ -21,7 +22,7 @@ export default function SettingScreen(props) {
     //function of navigate 
     const { navigate, goback } = navigation;
     return (
-        <SafeAreaView>
+        <SafeAreaView style = {{backgroundColor:"#fff"}}>
             <ScrollView>
                 <View>
                     <Text style={{
@@ -176,7 +177,7 @@ export default function SettingScreen(props) {
                     </TouchableOpacity></View>
 
                 <View><View style={styles.h1}>
-                    <Text style={styles.fontBlur}>Đăng nhập</Text>
+                    <Text style={styles.fontBlur}>Tài khoản</Text>
                 </View>
                     <TouchableOpacity style={styles.setIco}>
                         <Icon
@@ -193,7 +194,9 @@ export default function SettingScreen(props) {
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.setIco}>
+                    <TouchableOpacity style={styles.setIco} onPress={()=>{
+                        variable.isLogin=0
+                        navigate('Home')}}>
                         <Icon
                             name='sign-out-alt'
                             style={{ paddingStart: 10, opacity: 0.6 }}
@@ -231,10 +234,9 @@ const styles = StyleSheet.create({
 
     fontBlur: {
         color: '#000',
-        paddingStart: 18,
-        opacity: 0.5,
-        fontSize: 15,
-        fontWeight: "bold"
+        paddingStart: 16,
+        fontSize: 17,
+        fontWeight: "bold",
     },
 
     fontText: {

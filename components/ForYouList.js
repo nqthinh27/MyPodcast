@@ -1,23 +1,23 @@
 import React from "react";
 import { Text, View, Image, StyleSheet,ScrollView } from "react-native";
-import ForYou from "./ForYou";
+import HorizontalPodcast from "./HorizontalPodcast";
 
-export default function ForYouList(props) {
+export default function HorizontalPodcastList(props) {
     return (
         <ScrollView>
             <View>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
-                <ForYou/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
+                <HorizontalPodcast/>
             </View>
         </ScrollView>
     )

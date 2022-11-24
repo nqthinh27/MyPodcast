@@ -2,6 +2,7 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 import React from 'react'
 import colors from '../constants/colors'
 import Icon from 'react-native-vector-icons/Entypo'
+import variable from '../constants/variable';
 
 
 export default function SignIn(props) {
@@ -42,6 +43,7 @@ export default function SignIn(props) {
         <TouchableOpacity
           style={styles.btnView1}
           onPress={() => {
+            variable.isLogin = 1;
             navigate('Profile');
           }} >
           <Icon name="login" size={25} color="#fff" />
