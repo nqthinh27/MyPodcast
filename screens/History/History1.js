@@ -3,6 +3,7 @@ import React from 'react'
 import LibraryScreen from '../LibraryScreen'
 import colors from '../../constants/colors'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import ForYouList from '../../components/ForYouList'
 
 export default function History1() {
   return (
@@ -18,7 +19,7 @@ export default function History1() {
       </View>
       
       <View style={styles.container}>
-        
+        <ForYouList/>         
       </View>
 
     </View>
@@ -40,13 +41,14 @@ const styles = StyleSheet.create({
       },
     
       textHeader : {
+        alignSelf: "center",
         fontWeight : "bold",
         fontSize: 21
       },
       container : {
         flex: 20,
         backgroundColor : '#fff',
-        alignItems :'center',
-        justifyContent: 'center'
+        // alignItems :'center',
+        // justifyContent: 'center'
       },
 })
