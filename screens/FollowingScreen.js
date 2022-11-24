@@ -1,12 +1,13 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity, TextInput, FlatList, ScrollView, icon, FontAwesomeIcon, StyleSheet } from "react-native";
 import ForYou from "../components/ForYou";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon from 'react-native-vector-icons/Fontisto'
 import colors from "../constants/colors";
 import HeaderUI from "../components/HeaderUI";
 import FollowerList from "../components/FollowerList";
 import ForYouList from "../components/ForYouList";
 import fontSizes from "../constants/fontSizes";
+import { SafeAreaView } from "react-navigation";
 
 export default function FollowingScreen(props) {
     //navigation
@@ -14,9 +15,9 @@ export default function FollowingScreen(props) {
     //function of navigate 
     const { navigate, goback } = navigation;
     return (
-        <ScrollView style={{
-            top: 40
-        }}>
+        <SafeAreaView  style={{backgroundColor : "#fff"}}>
+
+        <ScrollView>
             {/* ==========================================HEADER========================================== */}
             <View style={styles.Header}>
                     <TouchableOpacity onPress={() => {
@@ -46,19 +47,28 @@ export default function FollowingScreen(props) {
             <View style={{
                 top: 20
             }}>
-                <View style={{flexDirection: 'row'}}>
-                    <Text style={fontSizes.titleSmall}>Người dùng theo dõi</Text>
+                <View style={{flexDirection: 'row', alignItems: "center"}}>
+                    <Text style={styles.title}>Người dùng đang theo dõi  </Text>
                     <Icon
-                        name='chevron-right'
-                        style={{ paddingStart: 4, opacity: 0.7 , top: 9}}
+                        name='angle-right'
+                        style={{ bottom: 3}}
                         size={15} color={'black'}
                     />
                 </View>
                 <FollowerList/>
-                <Text style={fontSizes.titleSmall}>Dành cho bạn</Text>
+                    <View style={{flexDirection: 'row', alignItems: "center", marginTop:10}}>
+                <Text style={styles.title}>Dành cho bạn  </Text>
+                <Icon
+                        name='angle-right'
+                        style={{ bottom: 3}}
+                        size={15} color={'black'}
+                    />
+
+                    </View>
                 <ForYouList/>
             </View>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
@@ -67,6 +77,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginHorizontal: 16
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: "bold",
+        marginLeft: 16,
+        marginBottom: 6
     },
     avatar: {
         width: 35,

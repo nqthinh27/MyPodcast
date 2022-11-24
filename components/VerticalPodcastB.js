@@ -4,7 +4,6 @@ import device from '../constants/device'
 // import Icon from 'react-native-vector-icons/Feather'
 
 export default function VerticalPodcastB({ item }) {
-    console.log(device.width);
     return (
         <View style={styles.wrapper}>
                 <View style={styles.boxShadow}><Image source={{ uri: item.avtUrl }} style={styles.avatar} /></View>

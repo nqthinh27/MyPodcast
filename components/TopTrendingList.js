@@ -7,9 +7,9 @@ import TopTrendingItem from "./TopTrendingItem";
 export default function TopTrendingList(props) {
     const datas = TopTrendingData
     // console.log(TopTrendingData[0].avtUrl)
-    var listItem = datas.map(data => {
-        <TopTrendingItem avtUrl={data.avtUrl} title={data.title} author={data.author} ranking={data.ranking}/>
-    })
+    // var listItem = datas.map(data => {
+    //     <TopTrendingItem avtUrl={data.avtUrl} title={data.title} author={data.author} ranking={data.ranking}/>
+    // })
     return (
         <ScrollView style={styles.wrapper} horizontal={true}>
            

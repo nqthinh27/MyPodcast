@@ -7,12 +7,11 @@ import MainNavigator from "./navigation/MainNavigator";
 import TabNavigator from "./navigation/TabNavigator";
 import { LibraryScreen } from "./screens";
 import Profile from "./screens/Profile";
-import PlayerScreen from "./screens/PlayerScreen"
 
 
 export default function App() {
   return (
-    <PlayerScreen/>
+    <TabNavigator/>
   );
 }
 

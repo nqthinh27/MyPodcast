@@ -12,18 +12,18 @@ export default function ForYou(props) {
             <View style={{
                 flex: 1,
                 marginRight: 10,
+                justifyContent: "center"
             }}>
                 <Text style={{
-                    top: 16,
-                    fontWeight: '500'
-                }}>Thử bao nhiêu lần trước khi dừng lại?</Text>
-                <Icon
+                    fontWeight: '500',
+                    fontSize: 16
+                }} numberOfLines={2}>Thử bao nhiêu lần trước khi dừng lại?</Text>
+                {/* <Icon
                     name='ellipsis-h'
                     style={{ opacity: 1, position: 'absolute', right: 10, top: 16 }}
                     size={18} color={'black'}
-                />
+                /> */}
                 <Text style={{
-                    top: 20
                 }}>.Vũ</Text>
             </View>
         </View>
@@ -32,8 +32,8 @@ export default function ForYou(props) {
 
 const styles = StyleSheet.create({
     h1: {
-        height: 80,
-        paddingTop: 10,
+        // height: 80,
+        marginBottom: 16,
         paddingStart: 16,
         flexDirection: 'row'
     },
@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
     imgUser: {
         width: 57,
         height: 57,
-        marginRight: 10
+        marginRight: 10,
+        borderRadius: 8
     },
 
 })

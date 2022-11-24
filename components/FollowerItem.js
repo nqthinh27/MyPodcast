@@ -7,7 +7,7 @@ export default function Followers(props) {
     return (
         <View style={styles.wrapper}>
             <Image
-                source={{uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} 
+                source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5' }}
                 style={styles.userFlw}
             />
         </View>
@@ -17,10 +17,13 @@ export default function Followers(props) {
 const styles = StyleSheet.create({
     userFlw: {
         //position: 'absolute',
-        width: 60,
-        height: 83,
-        left: 10,
-        margin: 5
+        width: 65,
+        height: 65,
+        left: 11,
+        margin: 5,
+        borderRadius: 200,
+        borderWidth: 2,
+        borderColor: colors.primary,
         //top: 50,
     },
 })

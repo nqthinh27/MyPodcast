@@ -1,4 +1,4 @@
-export const PopularData =
+export const RelexData =
     [
     {
         avtUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Ftinhyeu.jpg?alt=media&token=60938173-ab1c-4844-82fd-ce8642fc7170',
