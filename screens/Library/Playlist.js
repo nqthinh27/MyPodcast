@@ -3,10 +3,11 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/Entypo'
 import { PlaylistData } from '../../data/PlaylistData'
 import VerticalPodcastB from '../../components/VerticalPodcastB'
+import GlobalStyles from '../../components/GlobalStyles'
 
 export default function Playlist(props) {
   return (
-    <SafeAreaView style={styles.main}>
+    <SafeAreaView style={[styles.main, GlobalStyles.droidSafeArea]}>
 
     <ScrollView>
         <View style={styles.header}>

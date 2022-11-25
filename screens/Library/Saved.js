@@ -3,10 +3,11 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/Entypo'
 import { HistoryData } from '../../data/HistoryData'
 import HorizontalPodcast from '../../components/HorizontalPodcast'
+import GlobalStyles from '../../components/GlobalStyles'
 
 export default function Saved(props) {
   return (
-    <SafeAreaView style={styles.main}>
+    <SafeAreaView style={[styles.main, GlobalStyles.droidSafeArea]}>
 
     <ScrollView>
         <View style={styles.header}>

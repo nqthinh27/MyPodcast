@@ -9,6 +9,7 @@ import fontSizes from "../constants/fontSizes";
 import { SafeAreaView } from "react-navigation";
 import { ForYouData } from "../data/ForYouData";
 import HorizontalPodcast from "../components/HorizontalPodcast";
+import GlobalStyles from "../components/GlobalStyles";
 
 export default function FollowingScreen(props) {
     //navigation
@@ -16,7 +17,7 @@ export default function FollowingScreen(props) {
     //function of navigate 
     const { navigate, goback } = navigation;
     return (
-        <SafeAreaView style={{ backgroundColor: "#fff" }}>
+        <SafeAreaView style={[{ backgroundColor: "#fff" }, GlobalStyles.droidSafeArea]}>
 
             <ScrollView>
                 {/* ==========================================HEADER========================================== */}

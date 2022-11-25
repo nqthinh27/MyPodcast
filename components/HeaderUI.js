@@ -8,6 +8,7 @@ import {
     Alert
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather'
+import GlobalStyles from './GlobalStyles';
 
 export default function HeaderUI(props) {
     //navigation
@@ -15,7 +16,7 @@ export default function HeaderUI(props) {
     // // //function of navigate 
     // const { navigate, goback } = navigation;
     return (
-        <SafeAreaView style={styles.Header}>
+        <SafeAreaView style={[styles.Header, GlobalStyles.droidSafeArea]}>
             <Image 
                 source={{uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5'}} 
                 style={styles.avatar} 

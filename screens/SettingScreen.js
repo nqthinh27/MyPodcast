@@ -15,6 +15,7 @@ import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolic
 import colors from "../constants/colors";
 import fontSizes from "../constants/fontSizes";
 import variable from "../constants/variable";
+import GlobalStyles from "../components/GlobalStyles";
 
 export default function SettingScreen(props) {
     //navigation
@@ -22,7 +23,7 @@ export default function SettingScreen(props) {
     //function of navigate 
     const { navigate, goback } = navigation;
     return (
-        <SafeAreaView style = {{backgroundColor:"#fff"}}>
+        <SafeAreaView style = {[{backgroundColor:"#fff"}, GlobalStyles.droidSafeArea]}>
             <ScrollView>
                 <View>
                     <Text style={{

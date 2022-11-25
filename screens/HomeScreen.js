@@ -22,6 +22,7 @@ import SlideItem from "../components/SlideItem";
 import { RelexData } from "../data/RelexData";
 import variable from "../constants/variable";
 import { NavigationEvents } from "react-navigation";
+import GlobalStyles from "../components/GlobalStyles";
 
 export default function HomeScreen(props) {
     //navigation
@@ -30,7 +31,7 @@ export default function HomeScreen(props) {
     const { navigate, goback } = navigation;
     // variable.isLogin = 2
     return (
-        <SafeAreaView style={styles.wrapper}>
+        <SafeAreaView style={[styles.wrapper, GlobalStyles.droidSafeArea]} >
             {/* <NavigationEvents onDidFocus={()=> this.setState({})} /> */}
             <ScrollView>
                 {/* ==========================================HEADER========================================== */}

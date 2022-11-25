@@ -12,7 +12,7 @@ export default function OtherProfile(props) {
   //function of navigate 
   const { navigate, goback } = navigation;
   return (
-    <SafeAreaView style={styles.main}>
+    <SafeAreaView style={[styles.main, GlobalStyles.droidSafeArea]}>
       
     <ScrollView>
       <View style={styles.header}>

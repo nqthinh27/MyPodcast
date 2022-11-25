@@ -5,6 +5,7 @@ import colors from "../constants/colors";
 import HorizontalPodcast from "../components/HorizontalPodcast";
 import { SafeAreaView } from "react-navigation";
 import { RecommendData } from "../data/RecommendData";
+import GlobalStyles from "../components/GlobalStyles";
 
 export default function LibraryScreen(props) {
     navigation
@@ -12,7 +13,7 @@ export default function LibraryScreen(props) {
     //function of navigate 
     const { navigate, goback } = navigation;
     return (
-        <SafeAreaView style = {{backgroundColor:"#fff"}}>
+        <SafeAreaView style = {[{backgroundColor:"#fff"}, GlobalStyles.droidSafeArea]}>
             <ScrollView >
                 {/* ==========================================HEADER========================================== */}
                 <View style={styles.Header}>
