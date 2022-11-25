@@ -15,5 +15,6 @@ export const MyPopularData =
         avtUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/mypupular%2F9946f9ae3f570672c239a748071abb9b.jpg?alt=media&token=541d226b-0075-4f0b-864e-936cb143052c',
         title: 'Một cuộc đời đáng sống',
         author: '560 lượt thích',
-        id: 3,
-    }]
+        id: 3,        
+    },
+]

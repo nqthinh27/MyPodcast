@@ -15,6 +15,7 @@ export default function OTPcodeSU(props) {
         <Icon style={styles.back}
           name = {'chevron-left'}
           size={26}
+          onPress={()=>{navigate('SignUp')}}
         />
         <Text style={styles.textHeader}>Xác Minh</Text>
         <Text> </Text>

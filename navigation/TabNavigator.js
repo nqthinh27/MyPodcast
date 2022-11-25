@@ -6,7 +6,7 @@ import { HomeScreen, FollowingScreen, TestScreen } from "../screens";
 import UIScreen from "./UIScreen";
 import SignIn from "../screens/SignIn"
 import HeaderUI from "../components/HeaderUI";
-import Profile from "../screens/Profile";
+import MyProfile from "../screens/MyProfile";
 import ForgotPasswordSc from "../screens/ForgotPassword/ForgotPasswordSc"
 import NewPassword from "../screens/ForgotPassword/NewPassword"
 import OTPcode from "../screens/ForgotPassword/OTPcode"
@@ -14,6 +14,11 @@ import SuccessFP from "../screens/ForgotPassword/SuccessFP"
 import SignUp from "../screens/SignUp/SignUp"
 import OTPcodeSU from "../screens/SignUp/OTPcodeSU"
 import Success from "../screens/SignUp/Success"
+import History from "../screens/Library/History";
+import Saved from "../screens/Library/Saved";
+import Favourite from "../screens/Library/Favourite";
+import Playlist from "../screens/Library/Playlist";
+import PostScreen2 from "../screens/PostScreens/PostScreen2";
 
 const Stack = createNativeStackNavigator();
 export default function TabNavigator(props) {
@@ -21,12 +26,9 @@ export default function TabNavigator(props) {
         <Stack.Navigator initialRouteName="UIScreen" screenOptions={{headerShown:false}}>
             <Stack.Screen name={"Home"} component={HomeScreen} />
             <Stack.Screen name={"Follow"} component={FollowingScreen}/>
-            {/* <Stack.Screen name={"PostScreen"} component={PostScreen}/> */}
-            {/* <Stack.Screen name={"Thư viện"} component={LibraryScreen}/> */}
             <Stack.Screen name={"SignIn"} component={SignIn} />
-            {/* <Stack.Screen name={"Cài đặt"} component={SettingScreen}/> */}
             <Stack.Screen name={"UIScreen"} component={UIScreen}/>
-            <Stack.Screen name={"Profile"} component={Profile}/>
+            <Stack.Screen name={"MyProfile"} component={MyProfile}/>
             <Stack.Screen name={"NewPassword"} component={NewPassword}/>
             <Stack.Screen name={"ForgotPasswordSc"} component={ForgotPasswordSc}/>
             <Stack.Screen name={"OTPcode"} component={OTPcode}/>
@@ -35,6 +37,11 @@ export default function TabNavigator(props) {
             <Stack.Screen name={"Success"} component={Success}/>
             <Stack.Screen name={"SuccessFP"} component={SuccessFP}/>
             <Stack.Screen name={"Header"} component={HeaderUI}/>
+            <Stack.Screen name={"History"} component={History}/>
+            <Stack.Screen name={"Saved"} component={Saved}/>
+            <Stack.Screen name={"Favourite"} component={Favourite}/>
+            <Stack.Screen name={"Playlist"} component={Playlist}/>
+            <Stack.Screen name={"PostScreen2"} component={PostScreen2}/>
         </Stack.Navigator>
     </NavigationContainer>
 }

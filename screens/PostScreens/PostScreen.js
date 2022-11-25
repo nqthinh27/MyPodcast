@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, Image} from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity} from "react-native"
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 export default function PostScreen(props) {
@@ -39,14 +39,14 @@ export default function PostScreen(props) {
                     <Text style={styles.text}>Tải lên âm thanh của bạn tại đây</Text>
                 </View>
 
-                <View style={styles.viewimg2}>
+                <TouchableOpacity style={styles.viewimg2} onPress = {()=>{props.navigation.navigate('PostScreen2')}}>
                     <Image
                         style={styles.imgpost2}
                         source={{
                         uri: 'https://scontent.fhan3-5.fna.fbcdn.net/v/t1.15752-9/313394803_1817286368635183_1537591071517221617_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=pwfIRVLD8cQAX-djzNS&_nc_ht=scontent.fhan3-5.fna&oh=03_AdQNdQxiJTQYtNvV0cKfXYuqprUbVbOnto4JQ-tociK2KA&oe=63A42BB9',
                     }}
                     />
-                </View>
+                </TouchableOpacity>
                 
             </View>
         </View>

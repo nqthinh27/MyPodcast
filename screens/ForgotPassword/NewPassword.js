@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import colors from '../../constants/colors'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Entypo'
 
 export default function NewPassword(props) {
   //navigation
@@ -12,8 +12,9 @@ export default function NewPassword(props) {
     <View style={styles.main}>
       <View style={styles.header}>
         <Icon style={styles.back}
-          name = {'angle-left'}
+          name = {'chevron-left'}
           size={26}
+          onPress = {()=>{navigate('ForgotPasswordSc')}}
         />
         <Text style={styles.textHeader}>Mật Khẩu Mới</Text>
         <Text> </Text>

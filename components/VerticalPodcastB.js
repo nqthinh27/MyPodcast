@@ -16,18 +16,21 @@ export default function VerticalPodcastB({ item }) {
     )
 }
 
+const withItem=(device.width - 16*4) /3
 const styles = StyleSheet.create({
     wrapper: {
-        marginRight:16,
-        width: 108
+        // marginRight:16,
+        // width: 108
+        width: withItem,
+        marginBottom: 16
     },
     avatar: {
-        width: 108,
-        height: 108,
+        width: withItem,
+        height: withItem,
         borderRadius: 10,
     },
     textSection: {
-        width: 108
+        width: withItem
     },
     title: {
         fontSize: 16,

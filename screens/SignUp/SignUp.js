@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import colors from '../../constants/colors'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Entypo'
 
 
 export default function SignUp(props) {
@@ -13,8 +13,9 @@ export default function SignUp(props) {
     <View style={styles.main}>
       <View style={styles.header}>
         <Icon style={styles.back}
-          name = {'angle-left'}
+          name = {'chevron-left'}
           size={26}
+          onPress={()=>{navigate('SignIn')}}
         />
         <Text style={styles.textHeader}>Đăng ký</Text>
         <Text> </Text>
@@ -68,6 +69,7 @@ export default function SignUp(props) {
 const styles = StyleSheet.create({
   main : {
     flex: 1,
+    backgroundColor:"#fff"
   },
 
   header : {

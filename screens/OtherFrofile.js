@@ -1,17 +1,20 @@
-import { StyleSheet, Text, TextInput, View, Image, ScrollView, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Image, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native'
 import React from 'react'
 import colors from '../constants/colors'
 import Icon from 'react-native-vector-icons/Entypo'
 import VerticalPodcastB from '../components/VerticalPodcastB'
 import { MyPopularData } from '../data/MyPopularData'
+import { MyNewReLeaseData } from '../data/MyNewReleaseData'
 
-export default function Profile(props) {
+export default function OtherProfile(props) {
   //navigation
   const { navigation, route } = props;
   //function of navigate 
   const { navigate, goback } = navigation;
   return (
-    <View style={styles.main}>
+    <SafeAreaView style={styles.main}>
+      
+    <ScrollView>
       <View style={styles.header}>
         <Icon style={styles.back}
           name={'chevron-left'}
@@ -41,15 +44,15 @@ export default function Profile(props) {
 
             <View style={styles.textView2}>
               <View style={styles.viewpost}>
-                <Text style={styles.text3}>5</Text>
+                <Text style={styles.text3}>12</Text>
                 <Text style={styles.text2}>Bài đăng</Text>
               </View>
               <View style={styles.viewfollower}>
-                <Text style={styles.text3}>5</Text>
+                <Text style={styles.text3}>2002</Text>
                 <Text style={styles.text2}>Người theo dõi</Text>
               </View>
               <View style={styles.viewfollowing}>
-                <Text style={styles.text3}>5</Text>
+                <Text style={styles.text3}>506</Text>
                 <Text style={styles.text2}>Đang theo dõi</Text>
               </View>
             </View>
@@ -63,9 +66,9 @@ export default function Profile(props) {
 
         <Text style={styles.title}>Nổi bật</Text>
         <View style={styles.wrapper} horizontal={true}>
-          {MyPopularData.map(item => {
+          {MyPopularData.map((item,index) => {
             return (
-              <TouchableOpacity>
+              <TouchableOpacity key={index}>
                 <VerticalPodcastB item={item} />
               </TouchableOpacity>
             )
@@ -73,8 +76,19 @@ export default function Profile(props) {
         </View>
         <Text style={styles.title}>Mới phát hành</Text>
 
+        <View style={[styles.wrapper,{flexWrap:'wrap'}]} horizontal={true}>
+          {MyNewReLeaseData.map((item,index) => {
+            return (
+              <TouchableOpacity key={index}>
+                <VerticalPodcastB item={item} />
+              </TouchableOpacity>
+            )
+          })}
+        </View>
+
       </View>
-    </View>
+    </ScrollView>
+    </SafeAreaView>
   )
 }
 
@@ -84,24 +98,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   wrapper: {
-    marginLeft: 16,
+    marginHorizontal: 9,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 10
   },
   header: {
     flex: 1,
     marginHorizontal: 20,
-    marginTop: 40,
+    marginBottom:10,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start"
   },
   title: {
     marginLeft: 16,
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: 'bold',
-    marginTop: 6,
     marginBottom: 10
   },
   textHeader: {
@@ -169,7 +181,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#D6D6D6",
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 10,
+    marginVertical: 16,
     borderColor: 'white',
     alignSelf: 'center'
     // paddingHorizontal: 40

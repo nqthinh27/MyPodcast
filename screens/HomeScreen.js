@@ -12,8 +12,6 @@ import {
     Alert,
     TextInput
 } from 'react-native'
-import SlideBar from "../components/SlideBar";
-import PopularList from "../components/PopularList";
 import Icon from 'react-native-vector-icons/Fontisto'
 import TopTrendingItem from "../components/TopTrendingItem";
 import { TopTrendingData } from "../data/TopTrendingData";
@@ -38,7 +36,7 @@ export default function HomeScreen(props) {
                 {/* ==========================================HEADER========================================== */}
                 <View style={styles.Header}>
                     <TouchableOpacity onPress={() => {
-                        variable.isLogin == 0 ? navigate('SignIn') : navigate('Profile');
+                        variable.isLogin == 0 ? navigate('SignIn') : navigate('MyProfile');
                         // Alert.alert('aaa','aaa')
                     }}>
                         <Image
@@ -132,18 +130,18 @@ export default function HomeScreen(props) {
                 {/* ==========================================Mới phát hành/NewRelease========================================== */}
                 <Text style={[styles.title, styles.blank]}>Mới phát hành</Text>
                 <ScrollView style={{ marginLeft: 16 }} horizontal={true}>
-                    {NewReLeaseData.map(item => {
+                    {NewReLeaseData.map((item,index) => {
                         return (
-                            <TouchableOpacity onPress={() => alert("123")}>
+                            <TouchableOpacity onPress={() => alert("123")} key={index}>
                                 <VerticalPodcast item={item} />
                             </TouchableOpacity>)
                     })}
                 </ScrollView>
                 <Text style={[styles.title]}>Thư giãn cuối ngày</Text>
                 <ScrollView style={{ marginLeft: 16 }} horizontal={true}>
-                    {RelexData.map(item => {
-                        return (
-                            <TouchableOpacity onPress={() => alert("123")}>
+                    {RelexData.map((item,index) => {
+                        return ( 
+                            <TouchableOpacity onPress={() => alert("123") } key={index}>
                                 <VerticalPodcast item={item} />
                             </TouchableOpacity>)
                     })}
@@ -173,7 +171,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginHorizontal: 16
+        marginHorizontal: 16,
     },
     avatar: {
         width: 35,

@@ -2,7 +2,6 @@ import React from "react";
 import { Text, View, Image, TouchableOpacity, TextInput, FlatList, ScrollView, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/Fontisto";
 import colors from "../constants/colors";
-import { ForYouData } from "../data/ForYouData";
 import HorizontalPodcast from "../components/HorizontalPodcast";
 import { SafeAreaView } from "react-navigation";
 import { RecommendData } from "../data/RecommendData";
@@ -41,7 +40,7 @@ export default function LibraryScreen(props) {
                     </TouchableOpacity>
                 </View>
 
-
+                {/* ==========================================CONTENT========================================== */}
                 <View><View style={styles.h1}>
                     <Text style={[styles.titleSmall, {marginTop:8}]}>Thư viện</Text>
                     <View style={{
@@ -51,23 +50,25 @@ export default function LibraryScreen(props) {
                         justifyContent: "space-around",
                         marginRight: 16,
                     }}>
-                        <View style={styles.h2}>
+                        <TouchableOpacity style={styles.h2} onPress = {()=>{navigate('Saved')}}>
                             <Icon
                                 name='star'
-                                style={{ paddingStart: 10 }}
+                                style={{ paddingStart: 15 }}
                                 size={18}
+                                color= {colors.primary}
                             />
                             <Text style={styles.title2}>Đã lưu</Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={{flex:1}}></View>
-                        <View style={styles.h2}>
+                        <TouchableOpacity style={styles.h2} onPress = {()=>{navigate('Favourite')}}>
                             <Icon
                                 name='heart'
-                                style={{ paddingStart: 10 }}
-                                size={18} color={'black'}
+                                style={{ paddingStart: 15 }}
+                                size={18} 
+                                color="#FF0000"
                             />
                             <Text style={styles.title2}>Yêu thích</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={{
                         flexDirection: 'row',
@@ -76,32 +77,32 @@ export default function LibraryScreen(props) {
                         justifyContent: "space-around",
                         marginRight: 16
                     }}>
-                        <View style={styles.h2}>
+                        <TouchableOpacity style={styles.h2} onPress = {()=>{navigate('History')}}>
                             <Icon
-                                name='bookmark'
-                                style={{ paddingStart: 10 }}
-                                size={18} color={'black'}
+                                name='bookmark-alt'
+                                style={{ paddingStart: 15 }}
+                                size={20} color="#00EBEB"
                             />
                             <Text style={styles.title2}>Nghe gần đây</Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={{flex:1}}></View>
-                        <View style={styles.h2}>
+                        <TouchableOpacity style={styles.h2} onPress = {()=>{navigate('Playlist')}}>
                             <Icon
-                                name='user'
-                                style={{ paddingStart: 10 }}
-                                size={18} color={'black'}
+                                name='play-list'
+                                style={{ paddingStart: 15 }}
+                                size={18} color='#2EDC21'
                             />
-                            <Text style={styles.title2}>Tài khoản</Text>
-                        </View>
+                            <Text style={styles.title2}>Playlist</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
                     <View>
                         <Text style={[styles.titleSmall, {paddingBottom: 10, paddingTop: 10}]}>Có thể bạn sẽ thích</Text>
 
                         <View style={{ marginLeft: 16 }}>
-                            {RecommendData.map(item => {
+                            {RecommendData.map((item,index) => {
                                 return (
-                                    <TouchableOpacity onPress={() => alert("123")}>
+                                    <TouchableOpacity onPress={() => alert("123")} key={index}>
                                         <HorizontalPodcast item={item} />
                                     </TouchableOpacity>)
                             })}
@@ -142,6 +143,7 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 16,
         paddingStart: 10,
+        fontWeight: "500",
     },
     Header: {
         flexDirection: 'row',

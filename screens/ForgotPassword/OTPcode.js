@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import colors from '../../constants/colors'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Entypo'
 import fontSizes from '../../constants/fontSizes'
 
 export default function OTPcode(props) {
@@ -15,6 +15,7 @@ export default function OTPcode(props) {
         <Icon style={styles.back}
           name = {'chevron-left'}
           size={26}
+          onPress = {()=>{navigate('ForgotPasswordSc')}}
         />
         <Text style={styles.textHeader}>Xác Minh</Text>
         <Text> </Text>
@@ -39,7 +40,7 @@ export default function OTPcode(props) {
         <TouchableOpacity 
         style={styles.btnView1} 
         onPress={()=> {
-          navigate('Success')}}>
+          navigate('NewPassword')}}>
           <Text style={styles.btn1}>Xác nhận</Text>
         </TouchableOpacity>
       </View>
@@ -74,8 +75,7 @@ const styles = StyleSheet.create({
     flex: 20,
     backgroundColor : '#fff',
     alignItems :'center',
-    marginTop: "20%"
-
+    marginTop: "20%",
   },
 
   textView1 : {

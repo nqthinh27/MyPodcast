@@ -68,9 +68,9 @@ export default function FollowingScreen(props) {
                     </View>
 
                     <View style={{ marginLeft: 16, marginBottom: 20 }}>
-                        {ForYouData.map(item => {
+                        {ForYouData.map((item, index) => {
                             return (
-                                <TouchableOpacity onPress={() => alert("123")}>
+                                <TouchableOpacity onPress={() => alert("123")} key={index}>
                                     <HorizontalPodcast item={item} />
                                 </TouchableOpacity>)
                         })}

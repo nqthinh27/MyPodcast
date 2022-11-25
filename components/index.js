@@ -1,10 +1,8 @@
-import { SlideBar, SlideItem, TopTrendingItem, TopTrendingList, VerticalPodcast, PopularList } from "../components"
+import { SlideBar, SlideItem, TopTrendingItem, VerticalPodcast} from "../components"
 
 export {
     SlideBar,
     SlideItem,
     TopTrendingItem,
-    TopTrendingList,
     VerticalPodcast,
-    PopularList
 }

@@ -2,8 +2,6 @@ import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/FontAwesome'
-import Tabbar from "../navigation/Tabbar";
-import HeaderUI from "../navigation/Tabbar";
 
 
 export default function PostScreen2(props) {

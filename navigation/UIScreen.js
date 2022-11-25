@@ -1,7 +1,7 @@
 import * as React from "react";
 import HomeScreen from "../screens/HomeScreen";
 import FollowingScreen from "../screens/FollowingScreen";
-import PostScreen from "../screens/PostScreen";
+import PostScreen from "../screens/PostScreens/PostScreen";
 import LibraryScreen from "../screens/LibraryScreen";
 import SettingScreen from "../screens/SettingScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -34,16 +34,16 @@ const screenOptions = ({ route }) => ({
             }}/>
         } else if (screenName == "Post") {
             return <Image
-            style={{ width: 55, height: 55, marginTop: 18 }}
+            style={{ width: 50, height: 50, marginTop: 14 }}
             source={{
-                uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/icon%2Fico_POST.png?alt=media&token=9f7c2e27-221c-441e-8f6f-5d5ecfe0e5da',
+                uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/icon%2Fico_post.png?alt=media&token=c5e877aa-948a-440a-9a5a-6973bbc09784',
             }}/>
         } else if (screenName == "Library") {
             return <Image
             style={{ width: 25, height: 25, marginTop:3 }}
             source={{
                 uri: focused ? 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/icon%2Fico_lib_active.png?alt=media&token=0a3bb07a-79cc-4a92-a56f-ec496c8a95f9' : 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/icon%2Fico_lib_inactive.png?alt=media&token=a1d2afb9-f12c-4028-9536-39bd2511ecd0',
-            }}/>
+            }}/> 
         } else if (screenName == "Setting") {
             return <Image
             style={{ width: 25, height: 25, marginTop:3 }}

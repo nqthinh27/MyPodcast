@@ -14,7 +14,8 @@ export default function ForgotPasswordSc(props) {
         <Icon style={styles.back}
           name={'chevron-left'}
           size={26}
-          color={colors.primary}
+          // color={colors.primary}
+          onPress = {()=>{navigate('SignIn')}}
         />
         <Text style={styles.textHeader}>Quên Mật Khẩu</Text>
         <Text> </Text>
@@ -35,7 +36,7 @@ export default function ForgotPasswordSc(props) {
         <TouchableOpacity
           style={styles.btnView1}
           onPress={() => {
-            navigate('NewPassword');
+            navigate('OTPcode');
           }}>
           <Text style={styles.btn1}>Gửi</Text>
         </TouchableOpacity>

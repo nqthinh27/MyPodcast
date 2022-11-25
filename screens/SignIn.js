@@ -16,6 +16,8 @@ export default function SignIn(props) {
         <Icon style={styles.back}
           name={'chevron-left'}
           size={26}
+          // color={colors.primary}
+          onPress = {()=>{navigate('UIScreen')}}
         />
         <Text style={styles.textHeader}>Đăng nhập</Text>
         <Text> </Text>
@@ -31,7 +33,7 @@ export default function SignIn(props) {
         <View style={styles.textInputView2}>
           <TextInput style={styles.textInput2}
             placeholder='Mật khẩu'
-            password={true}
+            secureTextEntry={true}
           ></TextInput>
           <Text
             style={styles.textForgot}
@@ -44,7 +46,7 @@ export default function SignIn(props) {
           style={styles.btnView1}
           onPress={() => {
             variable.isLogin = 1;
-            navigate('Profile');
+            navigate('MyProfile');
           }} >
           <Icon name="login" size={25} color="#fff" />
           <Text style={styles.btn1}>  Đăng nhập</Text>
