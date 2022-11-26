@@ -6,19 +6,23 @@ import HorizontalPodcast from "../components/HorizontalPodcast";
 import { SafeAreaView } from "react-navigation";
 import { RecommendData } from "../data/RecommendData";
 import GlobalStyles from "../components/GlobalStyles";
+import variable from "../constants/variable";
 
 export default function LibraryScreen(props) {
     navigation
     const { navigation, route } = props;
     //function of navigate 
     const { navigate, goback } = navigation;
+    function playerNavigate() {
+        navigate('PlayerScreen');
+    }
     return (
         <SafeAreaView style = {[{backgroundColor:"#fff"}, GlobalStyles.droidSafeArea]}>
             <ScrollView >
                 {/* ==========================================HEADER========================================== */}
                 <View style={styles.Header}>
                     <TouchableOpacity onPress={() => {
-                        navigate('SignIn');
+                        variable.isLogin == 0 ? navigate('SignIn') : navigate('MyProfile');
                         // Alert.alert('aaa','aaa')
                     }}>
                         <Image
@@ -103,7 +107,7 @@ export default function LibraryScreen(props) {
                         <View style={{ marginLeft: 16 }}>
                             {RecommendData.map((item,index) => {
                                 return (
-                                    <TouchableOpacity onPress={() => alert("123")} key={index}>
+                                    <TouchableOpacity onPress={() => { playerNavigate() }} key={index}>
                                         <HorizontalPodcast item={item} />
                                     </TouchableOpacity>)
                             })}

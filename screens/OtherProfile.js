@@ -1,10 +1,11 @@
 import { StyleSheet, Text, TextInput, View, Image, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native'
 import React from 'react'
 import colors from '../constants/colors'
-import Icon from 'react-native-vector-icons/Entypo'
+import Icon from 'react-native-vector-icons/Feather'
 import VerticalPodcastB from '../components/VerticalPodcastB'
 import { MyPopularData } from '../data/MyPopularData'
 import { MyNewReLeaseData } from '../data/MyNewReleaseData'
+import GlobalStyles from '../components/GlobalStyles'
 
 export default function OtherProfile(props) {
   //navigation
@@ -39,7 +40,7 @@ export default function OtherProfile(props) {
 
           <View style={styles.viewuser}>
             <View style={styles.textView1}>
-              <Text style={styles.text1}>Nguyễn Quang Thịnh</Text>
+              <Text style={styles.text1}>User Name</Text>
             </View>
 
             <View style={styles.textView2}>
@@ -60,9 +61,17 @@ export default function OtherProfile(props) {
           </View>
         </View>
 
+            <View style={styles.btnViewWrapper}>
+
         <TouchableOpacity style={styles.btnView1}>
-          <Text style={styles.btn1}>Chỉnh sửa trang cá nhân</Text>
+          <Text style={styles.btn1}>Đang theo dõi  </Text>
+          <Icon style={styles.searchIcon} name="user-check" size={20} color="#000" />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.btnView2}>
+               <Icon style={styles.searchIcon} name="more-horizontal" size={30} color="#000" />
+        </TouchableOpacity>
+            </View>
+
 
         <Text style={styles.title}>Nổi bật</Text>
         <View style={styles.wrapper} horizontal={true}>
@@ -171,11 +180,29 @@ const styles = StyleSheet.create({
 
   },
 
+ btnViewWrapper: {
+  flexDirection:'row',
+  marginHorizontal: 16,
+  justifyContent: 'space-between'
+ },
 
-
+ btnView2: {
+  width: "18%",
+  height: 40,
+  borderRadius: 6,
+  borderWidth: 1,
+  backgroundColor: "#D6D6D6",
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginVertical: 16,
+  borderColor: 'white',
+  alignSelf: 'center',
+  // paddingHorizontal: 40
+  flexDirection: 'row'
+ },
   btnView1: {
-    width: "62%",
-    height: 30,
+    width: "80%",
+    height: 40,
     borderRadius: 6,
     borderWidth: 1,
     backgroundColor: "#D6D6D6",
@@ -183,8 +210,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginVertical: 16,
     borderColor: 'white',
-    alignSelf: 'center'
+    alignSelf: 'center',
     // paddingHorizontal: 40
+    flexDirection: 'row'
   },
 
 

@@ -1,12 +1,15 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet, Text, Touchable, View } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Entypo'
 import { HistoryData } from '../../data/HistoryData'
 import HorizontalPodcast from '../../components/HorizontalPodcast'
 import GlobalStyles from '../../components/GlobalStyles'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export default function Favourite(props) {
+
   return (
+    
     <SafeAreaView style={[styles.main, GlobalStyles.droidSafeArea]}>
 
     <ScrollView>
@@ -25,9 +28,9 @@ export default function Favourite(props) {
       <View style={{ marginLeft: 16 }}>
                             {HistoryData.map((item,index) => {
                                 return (
-                                    <View onPress={() => alert("123")} key={index}>
+                                    <TouchableOpacity key={index}>
                                         <HorizontalPodcast item={item} />
-                                    </View>)
+                                    </TouchableOpacity>)
                             })}
 
 

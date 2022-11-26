@@ -4,6 +4,8 @@ import PostScreen from "./PostScreens/PostScreen";
 import LibraryScreen from "./LibraryScreen";
 import SettingScreen from "./SettingScreen";
 import SignIn from "./SignIn";
+import OtherProfile from "./OtherProfile";
+// import PlayerScreen from "./PlayerScreen";
 
 export {
     HomeScreen,
@@ -11,5 +13,6 @@ export {
     PostScreen,
     LibraryScreen,
     SettingScreen,
-    SignIn
+    SignIn,
+    OtherProfile
 }

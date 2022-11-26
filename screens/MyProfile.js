@@ -33,7 +33,7 @@ export default function MyProfile(props) {
           <View style={styles.viewavatar}>
             <Image style={styles.imgavatar}
               source={{
-                uri: 'https://reactnative.dev/img/tiny_logo.png',
+                uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5',
               }}
             />
           </View>
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
 
   btnView1: {
     width: "62%",
-    height: 30,
+    height: 40,
     borderRadius: 6,
     borderWidth: 1,
     backgroundColor: "#D6D6D6",

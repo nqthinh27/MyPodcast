@@ -3,11 +3,11 @@ import { Text, View, Image, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import colors from "../constants/colors";
 
-export default function Followers(props) {
+export default function Followers({ item }) {
     return (
         <View style={styles.wrapper}>
             <Image
-                source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5' }}
+                source={{ uri: item.avtUrl }}
                 style={styles.userFlw}
             />
         </View>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     SafeAreaView,
     Text,
@@ -10,7 +10,7 @@ import {
     StyleSheet,
     ScrollView,
     Alert,
-    TextInput
+    TextInput,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Fontisto'
 import TopTrendingItem from "../components/TopTrendingItem";
@@ -21,10 +21,14 @@ import { SlideBarData } from "../data/SlideBarData";
 import SlideItem from "../components/SlideItem";
 import { RelexData } from "../data/RelexData";
 import variable from "../constants/variable";
-import { NavigationEvents } from "react-navigation";
 import GlobalStyles from "../components/GlobalStyles";
+// import PlayerScreen from "./PlayerScreen";
 
 export default function HomeScreen(props) {
+    function playerNavigate() {
+        navigate('PlayerScreen');
+        variable.isPlaying = 1
+    }
     //navigation
     const { navigation, route } = props;
     //function of navigate 
@@ -60,20 +64,13 @@ export default function HomeScreen(props) {
                     </TouchableOpacity>
                 </View>
                 {/* ==========================================Slide bar========================================== */}
-                {/* <TouchableOpacity onPress={() => {
-                                navigate('SignIn');
-                                // Alert.alert('aaa','aaa')
-            }} style = {{
-                marginTop: 100,
-                fontSize: 30,
-            }}><Text>This is HomeScreen</Text></TouchableOpacity> */}
                 <FlatList
                     horizontal={true}
                     style={styles.wrapper}
                     data={SlideBarData}
                     renderItem={({ item }) => {
                         return (
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => { playerNavigate() }}>
                             <SlideItem item={item} />
                         </TouchableOpacity>)
                     }}
@@ -84,43 +81,43 @@ export default function HomeScreen(props) {
 
                 <Text style={styles.title}>Bảng xếp hạng</Text>
                 {/* ==========================================BẢNG XẾP HẠNG========================================== */}
-                <ScrollView style={trendingStyles.wrapper} horizontal={true}>
+                <ScrollView style={trendingStyles.wrapper} horizontal={true} showsHorizontalScrollIndicator={false}> 
 
                     <View style={trendingStyles.contentWrapper}>
                         <View style={trendingStyles.contentSection}>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[0].avtUrl} title={TopTrendingData[0].title} author={TopTrendingData[0].author} ranking={TopTrendingData[0].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[1].avtUrl} title={TopTrendingData[1].title} author={TopTrendingData[1].author} ranking={TopTrendingData[1].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[2].avtUrl} title={TopTrendingData[2].title} author={TopTrendingData[2].author} ranking={TopTrendingData[2].ranking} />
                             </TouchableOpacity>
                         </View>
                     </View>
                     <View style={trendingStyles.contentWrapper}>
                         <View style={trendingStyles.contentSection}>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[3].avtUrl} title={TopTrendingData[3].title} author={TopTrendingData[3].author} ranking={TopTrendingData[3].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[4].avtUrl} title={TopTrendingData[4].title} author={TopTrendingData[4].author} ranking={TopTrendingData[4].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[5].avtUrl} title={TopTrendingData[5].title} author={TopTrendingData[5].author} ranking={TopTrendingData[5].ranking} />
                             </TouchableOpacity>
                         </View>
                     </View>
                     <View style={trendingStyles.contentWrapper}>
                         <View style={trendingStyles.contentSection}>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[6].avtUrl} title={TopTrendingData[6].title} author={TopTrendingData[6].author} ranking={TopTrendingData[6].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[7].avtUrl} title={TopTrendingData[7].title} author={TopTrendingData[7].author} ranking={TopTrendingData[7].ranking} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { navigate('Home') }} >
+                            <TouchableOpacity onPress={() => { playerNavigate() }} >
                                 <TopTrendingItem avtUrl={TopTrendingData[8].avtUrl} title={TopTrendingData[8].title} author={TopTrendingData[8].author} ranking={TopTrendingData[8].ranking} />
                             </TouchableOpacity>
                         </View>
@@ -130,24 +127,25 @@ export default function HomeScreen(props) {
 
                 {/* ==========================================Mới phát hành/NewRelease========================================== */}
                 <Text style={[styles.title, styles.blank]}>Mới phát hành</Text>
-                <ScrollView style={{ marginLeft: 16 }} horizontal={true}>
+                <ScrollView style={{ marginLeft: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     {NewReLeaseData.map((item,index) => {
                         return (
-                            <TouchableOpacity onPress={() => alert("123")} key={index}>
+                            <TouchableOpacity onPress={() => { playerNavigate() }} key={index}>
                                 <VerticalPodcast item={item} />
                             </TouchableOpacity>)
                     })}
-                </ScrollView>
+                </ScrollView >
                 <Text style={[styles.title]}>Thư giãn cuối ngày</Text>
-                <ScrollView style={{ marginLeft: 16 }} horizontal={true}>
+                <ScrollView style={{ marginLeft: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     {RelexData.map((item,index) => {
                         return ( 
-                            <TouchableOpacity onPress={() => alert("123") } key={index}>
+                            <TouchableOpacity onPress={() => { playerNavigate() } } key={index}>
                                 <VerticalPodcast item={item} />
                             </TouchableOpacity>)
                     })}
                 </ScrollView>
             </ScrollView>
+   <TextTest/>
         </SafeAreaView>
     )
 }
@@ -228,3 +226,12 @@ const trendingStyles = StyleSheet.create({
     },
 
 })
+
+const TextTest = () => {
+    const [value, setValue] = useState(variable.isPlaying);
+    return (
+        <TouchableOpacity onPress={() => setValue(variable.isPlaying)} style={{width:value, height:value, backgroundColor:"green"}}>
+            <Text onPress={()=>{variable.isPlaying=0}}>XXXX</Text>
+        </TouchableOpacity>
+    );
+};

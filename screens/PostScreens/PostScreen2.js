@@ -1,34 +1,32 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, Touchable, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Entypo'
+import { SafeAreaView } from "react-navigation";
+import colors from "../../constants/colors";
+import GlobalStyles from "../../components/GlobalStyles";
 
 
 export default function PostScreen2(props) {
-  //navigation
-  // const {navigation, route} = props;
-  // //function of navigate 
-  // const {navigate, goback} = navigation;
+  navigation
+  const {navigation, route} = props;
+  //function of navigate 
+  const {navigate, goback} = navigation;
   return (
 
-    <View style={styles.main}>
-      {/* <Text onPress={() => {
-                navigate('Thư viện')
-            }} style = {{
-                marginTop: 100,
-                fontSize: 30
-            }}></Text> */}
-
+    <SafeAreaView style={[{ backgroundColor: "#fff" }, GlobalStyles.droidSafeArea]}>
       <View style={styles.header}>
         <View style={styles.viewback}>
           <Icon style={styles.back}
-            name={'angle-left'}
+            name={'chevron-left'}
             size={26}
+            onPress = {()=>{navigate('UIScreen')}}
           />
           <Text style={styles.textHeader1}>Đăng bài</Text>
         </View>
-
-        <Text style={styles.textHeader2}>Đăng</Text>
+            <TouchableOpacity style = {styles.textHeader2Container} onPress = {()=>{navigate('SuccessP')}}>
+        <Text style={styles.textHeader2}>Chia sẻ</Text>
+            </TouchableOpacity>
       </View>
 
       <View style={styles.container}>
@@ -66,7 +64,7 @@ export default function PostScreen2(props) {
           {/* <Seekbar/> */}
         </View>
       </View>
-    </View>
+    </SafeAreaView>
 
 
 
@@ -82,7 +80,6 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     marginHorizontal: 20,
-    marginTop: 40,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -93,12 +90,19 @@ const styles = StyleSheet.create({
   },
 
   textHeader1: {
-    //fontWeight : "bold",
     fontSize: 21,
     paddingStart: 8
   },
   textHeader2: {
     fontSize: 16,
+    color: "#fff",
+    fontWeight: '500'
+  },
+
+  textHeader2Container:{ 
+    backgroundColor: colors.primary,
+    padding:6,
+    borderRadius:6,
     justifyContent: "flex-end"
   },
 

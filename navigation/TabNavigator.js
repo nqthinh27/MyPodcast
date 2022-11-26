@@ -19,6 +19,9 @@ import Saved from "../screens/Library/Saved";
 import Favourite from "../screens/Library/Favourite";
 import Playlist from "../screens/Library/Playlist";
 import PostScreen2 from "../screens/PostScreens/PostScreen2";
+import PlayerScreen from "../screens/PlayerScreen";
+import OtherProfile from "../screens/OtherProfile";
+import SuccessP from "../screens/PostScreens/SuccessP"
 
 const Stack = createNativeStackNavigator();
 export default function TabNavigator(props) {
@@ -42,6 +45,9 @@ export default function TabNavigator(props) {
             <Stack.Screen name={"Favourite"} component={Favourite}/>
             <Stack.Screen name={"Playlist"} component={Playlist}/>
             <Stack.Screen name={"PostScreen2"} component={PostScreen2}/>
+            <Stack.Screen name={"PlayerScreen"} component={PlayerScreen}/>
+            <Stack.Screen name={"OtherProfile"} component={OtherProfile}/>
+            <Stack.Screen name={"SuccessP"} component={SuccessP}/>
         </Stack.Navigator>
     </NavigationContainer>
 }

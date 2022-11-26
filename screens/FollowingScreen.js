@@ -1,21 +1,22 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity, TextInput, FlatList, ScrollView, icon, FontAwesomeIcon, StyleSheet } from "react-native";
-import ForYou from "../components/HorizontalPodcast";
 import Icon from 'react-native-vector-icons/Fontisto'
-import colors from "../constants/colors";
-import HeaderUI from "../components/HeaderUI";
-import FollowerList from "../components/FollowerList";
-import fontSizes from "../constants/fontSizes";
 import { SafeAreaView } from "react-navigation";
 import { ForYouData } from "../data/ForYouData";
 import HorizontalPodcast from "../components/HorizontalPodcast";
 import GlobalStyles from "../components/GlobalStyles";
+import { FollowedData } from "../data/FollowedData";
+import Followers from "../components/FollowerItem";
+import variable from "../constants/variable";
 
 export default function FollowingScreen(props) {
     //navigation
     const { navigation, route } = props;
     //function of navigate 
     const { navigate, goback } = navigation;
+    function playerNavigate() {
+        navigate('PlayerScreen');
+    }
     return (
         <SafeAreaView style={[{ backgroundColor: "#fff" }, GlobalStyles.droidSafeArea]}>
 
@@ -23,7 +24,7 @@ export default function FollowingScreen(props) {
                 {/* ==========================================HEADER========================================== */}
                 <View style={styles.Header}>
                     <TouchableOpacity onPress={() => {
-                        navigate('SignIn');
+                        variable.isLogin == 0 ? navigate('SignIn') : navigate('MyProfile');
                         // Alert.alert('aaa','aaa')
                     }}>
                         <Image
@@ -57,7 +58,16 @@ export default function FollowingScreen(props) {
                             size={15} color={'black'}
                         />
                     </View>
-                    <FollowerList />
+
+                    <ScrollView horizontal={true}>
+                        {FollowedData.map((item, index) => {
+                            return (
+                                <TouchableOpacity onPress={() => {navigate('OtherProfile')}} key={index}>
+                                    <Followers item={item} />
+                                </TouchableOpacity>)
+                        })}
+                    </ScrollView>
+
                     <View style={{ flexDirection: 'row', alignItems: "center", marginTop: 10 }}>
                         <Text style={[styles.title,{paddingTop:5, paddingBottom:3}]}>Dành cho bạn  </Text>
                         <Icon
@@ -71,7 +81,7 @@ export default function FollowingScreen(props) {
                     <View style={{ marginLeft: 16, marginBottom: 20 }}>
                         {ForYouData.map((item, index) => {
                             return (
-                                <TouchableOpacity onPress={() => alert("123")} key={index}>
+                                <TouchableOpacity onPress={() => { playerNavigate() }} key={index}>
                                     <HorizontalPodcast item={item} />
                                 </TouchableOpacity>)
                         })}
