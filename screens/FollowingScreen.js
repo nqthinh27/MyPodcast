@@ -59,17 +59,17 @@ export default function FollowingScreen(props) {
                         />
                     </View>
 
-                    <ScrollView horizontal={true}>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         {FollowedData.map((item, index) => {
                             return (
-                                <TouchableOpacity onPress={() => {navigate('OtherProfile')}} key={index}>
+                                <TouchableOpacity onPress={() => { navigate('OtherProfile') }} key={index}>
                                     <Followers item={item} />
                                 </TouchableOpacity>)
                         })}
                     </ScrollView>
 
                     <View style={{ flexDirection: 'row', alignItems: "center", marginTop: 10 }}>
-                        <Text style={[styles.title,{paddingTop:5, paddingBottom:3}]}>Dành cho bạn  </Text>
+                        <Text style={[styles.title, { paddingTop: 5, paddingBottom: 3 }]}>Dành cho bạn  </Text>
                         <Icon
                             name='angle-right'
                             style={{ bottom: 3 }}

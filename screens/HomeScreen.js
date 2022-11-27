@@ -22,6 +22,9 @@ import SlideItem from "../components/SlideItem";
 import { RelexData } from "../data/RelexData";
 import variable from "../constants/variable";
 import GlobalStyles from "../components/GlobalStyles";
+import Playlist from "./Library/Playlist";
+import { PlaylistData } from "../data/PlaylistData";
+import { RecommendData } from "../data/RecommendData";
 // import PlayerScreen from "./PlayerScreen";
 
 export default function HomeScreen(props) {
@@ -125,7 +128,7 @@ export default function HomeScreen(props) {
 
                 </ScrollView>
 
-                {/* ==========================================Mới phát hành/NewRelease========================================== */}
+                {/* ==================================================================================== */}
                 <Text style={[styles.title, styles.blank]}>Mới phát hành</Text>
                 <ScrollView style={{ marginLeft: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     {NewReLeaseData.map((item,index) => {
@@ -138,6 +141,24 @@ export default function HomeScreen(props) {
                 <Text style={[styles.title]}>Thư giãn cuối ngày</Text>
                 <ScrollView style={{ marginLeft: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     {RelexData.map((item,index) => {
+                        return ( 
+                            <TouchableOpacity onPress={() => { playerNavigate() } } key={index}>
+                                <VerticalPodcast item={item} />
+                            </TouchableOpacity>)
+                    })}
+                </ScrollView>
+                <Text style={[styles.title]}>Alum thịnh hành</Text>
+                <ScrollView style={{ marginLeft: 16, marginBottom: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                    {PlaylistData.map((item,index) => {
+                        return ( 
+                            <TouchableOpacity onPress={() => { playerNavigate() } } key={index}>
+                                <VerticalPodcast item={item} />
+                            </TouchableOpacity>)
+                    })}
+                </ScrollView>
+                <Text style={[styles.title]}>Cuộc sống hằng ngày</Text>
+                <ScrollView style={{ marginLeft: 16, marginBottom: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                    {RecommendData.map((item,index) => {
                         return ( 
                             <TouchableOpacity onPress={() => { playerNavigate() } } key={index}>
                                 <VerticalPodcast item={item} />
