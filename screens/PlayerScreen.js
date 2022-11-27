@@ -31,7 +31,7 @@ export default function PlayerScreen(props) {
         <TouchableOpacity>
           <Icon
             name={"chevron-down"}
-            style={{ margin: 10 }}
+            style={{ }}
             size={28}
             color={"#fff"}
             onPress = {() => {navigate('UIScreen')}}
@@ -41,7 +41,7 @@ export default function PlayerScreen(props) {
         <TouchableOpacity>
           <Icon
             name="dots-horizontal"
-            style={{ opacity: 1, left: 280, top: 10 }}
+            style={{ opacity: 1, top: 10 }}
             size={25}
             color={"#fff"}
           />
@@ -176,6 +176,7 @@ const styles = StyleSheet.create({
   frame1: {
     marginHorizontal: 20,
     top: 40,
+    justifyContent: "space-between",
     flexDirection: "row",
   },
 
