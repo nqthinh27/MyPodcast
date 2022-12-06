@@ -22,6 +22,7 @@ import PostScreen2 from "../screens/PostScreens/PostScreen2";
 import PlayerScreen from "../screens/PlayerScreen";
 import OtherProfile from "../screens/OtherProfile";
 import SuccessP from "../screens/PostScreens/SuccessP"
+import MiniPlayer from "../components/MiniPlayer";
 
 const Stack = createNativeStackNavigator();
 export default function TabNavigator(props) {
@@ -48,6 +49,7 @@ export default function TabNavigator(props) {
             <Stack.Screen name={"PlayerScreen"} component={PlayerScreen}/>
             <Stack.Screen name={"OtherProfile"} component={OtherProfile}/>
             <Stack.Screen name={"SuccessP"} component={SuccessP}/>
+            <Stack.Screen name={"MiniPlayer"} component={MiniPlayer}/>
         </Stack.Navigator>
     </NavigationContainer>
 }

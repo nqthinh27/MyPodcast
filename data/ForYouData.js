@@ -25,7 +25,7 @@ export const ForYouData =
         id: 3,
     },
     {
-        avtUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fhoctienganh.jpg?alt=media&token=d3164959-8bd4-444a-9d34-18242bfb9dda',
+        avtUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fhoctienganh.jpg?alt=media&token=b3d4a00c-f509-4df6-96ab-562ff6b0be8a',
         audioUrl:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/ForYou%2Faudio%2FLearnKorean.mp3?alt=media&token=8669e092-fc50-4ad4-909e-cf43aeb88ca5',
         title:'Learn Korean',
         author:'bychanceKorean',

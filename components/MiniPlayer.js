@@ -1,69 +1,86 @@
 import React from "react";
-import { Text, View, Image, StyleSheet, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { Text, View, Image, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 import colors from "../constants/colors";
 
 export default function MiniPlayer(props) {
     return (
-        <TouchableOpacity style={styles.h1}>
-            <View style={styles.viewimgUser}>
-                <Image
-                    style={styles.imgUser}
-                    source={{
-                        uri: 'https://i.paste.pics/aa9129561fa3d1a3b0ba1f9ae12be5ef.png',
-                    }}
-                    />
-            </View>
-            
-            <View style={styles.viewName}>
-                <Text style={{
-                    fontWeight: 'bold',
-                    fontSize: 14
-                }}>Thử bao nhiêu lần trước khi dừng lại?</Text>
-                
-                
-                <Text style={{
-                    fontSize: 13
-                }}>.Vũ</Text>
-            </View>
+        <View style={styles.h1}>
+            <ImageBackground
+                source={{
+                    uri: "https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fhoctienganh.jpg?alt=media&token=b3d4a00c-f509-4df6-96ab-562ff6b0be8a",
+                }}
+                resizeMode="cover"
+                style={styles.bgImg}
+                blurRadius={5}
+                opacity={0.2}
+            >
 
-            <View style={styles.viewPlay}>
-                <TouchableOpacity>
-                    <Icon
-                        name='step-backward'
-                        style={styles.iconBack}
-                        size={20} color={'black'}
+                <View style={styles.viewimgUser}>
+                    <Image
+                        style={styles.imgUser}
+                        source={{
+                            uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fhoctienganh.jpg?alt=media&token=b3d4a00c-f509-4df6-96ab-562ff6b0be8a',
+                        }}
                     />
-                </TouchableOpacity>
+                </View>
 
-                <TouchableOpacity>
-                    <Icon
+                <View style={styles.viewName}>
+                    <Text style={{
+                        fontWeight: '600',
+                        fontSize: 14
+                    }}>The future is good</Text>
+
+
+                    <Text style={{
+                        fontSize: 13
+                    }}>Adrian reif</Text>
+                </View>
+
+                <View style={styles.viewPlay}>
+                    <TouchableOpacity>
+                        <Icon
+                            name='play-skip-back-sharp'
+                            style={styles.iconBack}
+                            size={22} color={'black'}
+                        />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <Icon
                             name='play-circle'
                             style={styles.iconPlay}
-                            size={29} color={'black'}
-                    />
-                </TouchableOpacity>
+                            size={37} color={'black'}
+                        />
+                    </TouchableOpacity>
 
-                <TouchableOpacity>
-                     <Icon
-                        name='step-forward'
-                        style={styles.iconNext}
-                        size={20} color={'black'}
-                    />
-                </TouchableOpacity>
-                
-            </View>
-        </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Icon
+                            name='play-skip-forward-sharp'
+                            style={styles.iconNext}
+                            size={22} color={'black'}
+                        />
+                    </TouchableOpacity>
+
+                </View>
+            </ImageBackground>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
-    h1: {
-        height: 72,
-        marginTop: 10,
+    
+    bgImg: {
         flexDirection: 'row',
-        backgroundColor : "#FFC75A",
-        paddingBottom: 10,
+        backgroundColor: "#fff",
+        paddingVertical: 10,
+    },
+    h1: {
+        // // height: 72,
+        // marginTop: 10,
+        // flexDirection: 'row',
+        // backgroundColor: "#fff",
+        // paddingBottom: 10,
     },
 
     viewimgUser: {
@@ -76,23 +93,26 @@ const styles = StyleSheet.create({
     imgUser: {
         width: 54,
         height: 54,
+        borderRadius:7,
     },
 
     viewName: {
         flex: 3,
-        justifyContent: "flex-end"
+        justifyContent: "center",
+        marginLeft:3
     },
 
-    viewPlay : {
+    viewPlay: {
         flex: 1.5,
-        flexDirection : "row",
+        flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-around",
-        marginRight: 10,
+        marginRight: 25,
+        marginLeft: 10
     },
 
     iconPlay: {
-        marginHorizontal : 10
+        marginHorizontal: 10
     }
 
 })

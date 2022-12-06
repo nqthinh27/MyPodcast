@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import {
     SafeAreaView,
     Text,
@@ -25,18 +25,21 @@ import GlobalStyles from "../components/GlobalStyles";
 import Playlist from "./Library/Playlist";
 import { PlaylistData } from "../data/PlaylistData";
 import { RecommendData } from "../data/RecommendData";
+import MiniPlayer from "../components/MiniPlayer";
+import PlayerScreen from "./PlayerScreen";
 // import PlayerScreen from "./PlayerScreen";
 
 export default function HomeScreen(props) {
+    const [isPlaying, setPlaying] = useState(0);
+    useEffect(() => { }, [isPlaying])
     function playerNavigate() {
         navigate('PlayerScreen');
-        variable.isPlaying = 1
+        setPlaying(1);
     }
     //navigation
     const { navigation, route } = props;
     //function of navigate 
     const { navigate, goback } = navigation;
-    // variable.isLogin = 2
     return (
         <SafeAreaView style={[styles.wrapper, GlobalStyles.droidSafeArea]} >
             {/* <NavigationEvents onDidFocus={()=> this.setState({})} /> */}
@@ -48,7 +51,7 @@ export default function HomeScreen(props) {
                         // Alert.alert('aaa','aaa')
                     }}>
                         <Image
-                            source={{ uri:'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5' }}
+                            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/avatar.jpg?alt=media&token=fc074eb8-e67f-4235-8230-160cae1557b5' }}
                             style={styles.avatar} />
                     </TouchableOpacity>
                     <View style={styles.searchSection}>
@@ -73,9 +76,9 @@ export default function HomeScreen(props) {
                     data={SlideBarData}
                     renderItem={({ item }) => {
                         return (
-                        <TouchableOpacity onPress={() => { playerNavigate() }}>
-                            <SlideItem item={item} />
-                        </TouchableOpacity>)
+                            <TouchableOpacity onPress={() => { playerNavigate() }}>
+                                <SlideItem item={item} />
+                            </TouchableOpacity>)
                     }}
                     showsHorizontalScrollIndicator={false}
                     scrollEventThrottle={16}
@@ -84,7 +87,7 @@ export default function HomeScreen(props) {
 
                 <Text style={styles.title}>Bảng xếp hạng</Text>
                 {/* ==========================================BẢNG XẾP HẠNG========================================== */}
-                <ScrollView style={trendingStyles.wrapper} horizontal={true} showsHorizontalScrollIndicator={false}> 
+                <ScrollView style={trendingStyles.wrapper} horizontal={true} showsHorizontalScrollIndicator={false}>
 
                     <View style={trendingStyles.contentWrapper}>
                         <View style={trendingStyles.contentSection}>
@@ -131,7 +134,7 @@ export default function HomeScreen(props) {
                 {/* ==================================================================================== */}
                 <Text style={[styles.title, styles.blank]}>Mới phát hành</Text>
                 <ScrollView style={{ marginLeft: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    {NewReLeaseData.map((item,index) => {
+                    {NewReLeaseData.map((item, index) => {
                         return (
                             <TouchableOpacity onPress={() => { playerNavigate() }} key={index}>
                                 <VerticalPodcast item={item} />
@@ -140,33 +143,38 @@ export default function HomeScreen(props) {
                 </ScrollView >
                 <Text style={[styles.title]}>Thư giãn cuối ngày</Text>
                 <ScrollView style={{ marginLeft: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    {RelexData.map((item,index) => {
-                        return ( 
-                            <TouchableOpacity onPress={() => { playerNavigate() } } key={index}>
+                    {RelexData.map((item, index) => {
+                        return (
+                            <TouchableOpacity onPress={() => { playerNavigate() }} key={index}>
                                 <VerticalPodcast item={item} />
                             </TouchableOpacity>)
                     })}
                 </ScrollView>
                 <Text style={[styles.title]}>Alum thịnh hành</Text>
                 <ScrollView style={{ marginLeft: 16, marginBottom: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    {PlaylistData.map((item,index) => {
-                        return ( 
-                            <TouchableOpacity onPress={() => { playerNavigate() } } key={index}>
+                    {PlaylistData.map((item, index) => {
+                        return (
+                            <TouchableOpacity onPress={() => { playerNavigate() }} key={index}>
                                 <VerticalPodcast item={item} />
                             </TouchableOpacity>)
                     })}
                 </ScrollView>
                 <Text style={[styles.title]}>Cuộc sống hằng ngày</Text>
                 <ScrollView style={{ marginLeft: 16, marginBottom: 16 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    {RecommendData.map((item,index) => {
-                        return ( 
-                            <TouchableOpacity onPress={() => { playerNavigate() } } key={index}>
+                    {RecommendData.map((item, index) => {
+                        return (
+                            <TouchableOpacity onPress={() => { playerNavigate() }} key={index}>
                                 <VerticalPodcast item={item} />
                             </TouchableOpacity>)
                     })}
                 </ScrollView>
             </ScrollView>
-   <TextTest/>
+            {isPlaying == 1 && <TouchableOpacity onPress={()=>navigate(PlayerScreen)}>
+                <MiniPlayer />
+                <TouchableOpacity>
+                    <Icon style={styles.closeIcon} name="close-a" size={13} color="#000" onPress={()=>{setPlaying(0);}}/>
+                </TouchableOpacity>
+            </TouchableOpacity>}
         </SafeAreaView>
     )
 }
@@ -225,7 +233,15 @@ const styles = StyleSheet.create({
     bell: {
         height: 26,
         width: 26,
-    }
+    },
+    closeIcon: {
+        position: "absolute",
+        right: 0,
+        bottom: 51,
+        color: "#000",
+        padding: 5,
+        // backgroundColor:"green"
+    },
 })
 
 const trendingStyles = StyleSheet.create({
@@ -248,11 +264,3 @@ const trendingStyles = StyleSheet.create({
 
 })
 
-const TextTest = () => {
-    const [value, setValue] = useState(variable.isPlaying);
-    return (
-        <TouchableOpacity onPress={() => setValue(variable.isPlaying)} style={{width:value, height:value, backgroundColor:"green"}}>
-            <Text onPress={()=>{variable.isPlaying=0}}>XXXX</Text>
-        </TouchableOpacity>
-    );
-};

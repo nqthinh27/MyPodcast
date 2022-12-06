@@ -28,7 +28,7 @@ export const TopTrendingData =
         ranking: 3
     },
     {
-        avtUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fhoctienganh.jpg?alt=media&token=d3164959-8bd4-444a-9d34-18242bfb9dda',
+        avtUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fhoctienganh.jpg?alt=media&token=b3d4a00c-f509-4df6-96ab-562ff6b0be8a',
         audioUrl: 'https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fpodcast%2Fluyenngehtienganh.mp3?alt=media&token=4646ba85-5597-41d4-80a2-e744ab43113d',
         title: 'learnEnglish',
         author: 'MT',

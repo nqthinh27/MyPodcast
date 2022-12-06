@@ -19,7 +19,7 @@ export default function PlayerScreen(props) {
   return (
     <ImageBackground
       source={{
-        uri: "https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/Tu%2FEllipse%2010.png?alt=media&token=70f1056c-0e10-4e01-9083-b06d722f6c01",
+        uri: "https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fhoctienganh.jpg?alt=media&token=b3d4a00c-f509-4df6-96ab-562ff6b0be8a",
       }}
       resizeMode="cover"
       style={{
@@ -52,15 +52,15 @@ export default function PlayerScreen(props) {
         <View>
           <Image
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/Tu%2FRectangle%2038.png?alt=media&token=780197d0-e51a-496c-8ff1-006b24341c50",
+              uri: "https://firebasestorage.googleapis.com/v0/b/mypodcast-88135.appspot.com/o/trending%2Fimage%2Fhoctienganh.jpg?alt=media&token=b3d4a00c-f509-4df6-96ab-562ff6b0be8a",
             }}
             style={styles.imageWrapper}
           />
         </View>
 
         <View>
-          <Text style={styles.title1} >Tuổi trẻ, Tình yêu và công việc</Text>
-          <Text style={styles.title2} onPress={()=> {navigate('OtherProfile')}}>Tun Phạm</Text>
+          <Text style={styles.title1} >The future is good</Text>
+          <Text style={styles.title2} onPress={()=> {navigate('OtherProfile')}}>Adrian reif</Text>
         </View>
         <View>
           <Slider
@@ -202,15 +202,15 @@ const styles = StyleSheet.create({
 
   title1: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: "600",
     top: 30,
     marginLeft: 16,
     color: "#000000",
   },
 
   title2: {
-    fontSize: 15,
-    marginTop: 30,
+    fontSize: 16,
+    marginTop: 35,
     marginLeft: 16,
     color: "#000000"
   },
