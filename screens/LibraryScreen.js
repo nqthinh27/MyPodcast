@@ -56,11 +56,10 @@ export default function LibraryScreen(props) {
                         marginRight: 16,
                     }}>
                         <TouchableOpacity style={styles.h2} onPress = {()=>{navigate('Saved')}}>
-                            <Icon
-                                name='star'
+                        <Icon
+                                name='bookmark-alt'
                                 style={{ paddingStart: 15 }}
-                                size={18}
-                                color= {colors.primary}
+                                size={20} color={colors.primary}
                             />
                             <Text style={styles.title2}>Đã lưu</Text>
                         </TouchableOpacity>
@@ -84,7 +83,7 @@ export default function LibraryScreen(props) {
                     }}>
                         <TouchableOpacity style={styles.h2} onPress = {()=>{navigate('History')}}>
                             <Icon
-                                name='bookmark-alt'
+                                name='history'
                                 style={{ paddingStart: 15 }}
                                 size={20} color="#00EBEB"
                             />
